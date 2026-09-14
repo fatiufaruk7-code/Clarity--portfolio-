@@ -15,9 +15,21 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
 
   const navItems = [
     { label: 'HOME', href: '#home', id: 'home' },
@@ -112,41 +124,41 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       {/* Mobile Slide-down Drawer */}
       {mobileMenuOpen && (
         <div 
-          className="md:hidden border-b border-[#1E293B] bg-[#0E1428]/98 backdrop-blur-2xl px-6 py-6 transition-all animate-in slide-in-from-top-4 duration-300 shadow-2xl"
+          className="md:hidden border-b border-[#1E293B] bg-[#0E1428]/98 backdrop-blur-2xl px-5 py-5 sm:px-6 transition-all animate-in slide-in-from-top-4 duration-300 shadow-2xl max-h-[calc(100vh-70px)] overflow-y-auto"
           id="mobile-drawer"
         >
-          <ul className="flex flex-col gap-4 mb-6">
+          <ul className="flex flex-col gap-2 mb-5">
             {navItems.map((item, index) => (
               <li 
                 key={item.id}
                 className="mobile-nav-item"
-                style={{ animationDelay: `${index * 60}ms` }}
+                style={{ animationDelay: `${index * 50}ms` }}
               >
                 <a
                   href={item.href}
                   onClick={(e) => handleMobileNavClick(e, item.id)}
-                  className={`flex items-center justify-between py-2.5 text-base font-bold transition-colors ${
+                  className={`flex items-center justify-between py-3 px-3 rounded-lg text-base font-bold transition-all min-h-[44px] ${
                     activeSection === item.id
-                      ? 'text-[#A78BFA] border-l-2 border-[#8B5CF6] pl-3'
-                      : 'text-[#94A3B8] hover:text-white pl-1'
+                      ? 'text-[#A78BFA] bg-[#8B5CF6]/10 border-l-3 border-[#8B5CF6]'
+                      : 'text-[#94A3B8] hover:text-white hover:bg-white/5'
                   }`}
                 >
                   <span>{item.label}</span>
                   {activeSection === item.id && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6]" />
+                    <span className="w-2 h-2 rounded-full bg-[#8B5CF6] shadow-[0_0_8px_#8B5CF6]" />
                   )}
                 </a>
               </li>
             ))}
           </ul>
 
-          <div className="flex flex-col gap-3 pt-4 border-t border-[#1E293B]">
+          <div className="flex flex-col gap-2.5 pt-4 border-t border-[#1E293B]">
             <PWAInstallButton variant="mobile" />
 
             <a
               href="#contact"
               onClick={(e) => handleMobileNavClick(e, 'contact')}
-              className="btn btn-primary w-full text-center justify-center py-3 text-sm font-bold"
+              className="btn btn-primary w-full text-center justify-center py-3 text-sm font-bold min-h-[48px]"
             >
               <span>START A PROJECT</span>
               <ArrowRight className="w-4 h-4" />
@@ -156,7 +168,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               href="https://wa.me/2348137941486"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp w-full text-center justify-center py-3 text-sm font-bold"
+              className="btn btn-whatsapp w-full text-center justify-center py-3 text-sm font-bold min-h-[48px]"
             >
               <MessageCircle className="w-4 h-4" />
               <span>CHAT ON WHATSAPP</span>

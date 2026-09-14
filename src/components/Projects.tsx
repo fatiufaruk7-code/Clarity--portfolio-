@@ -177,12 +177,12 @@ export const Projects: React.FC = () => {
 
         {/* Project Section Call-to-Action */}
         <ScrollReveal direction="up" delay={250} distance={20}>
-          <div className="mt-14 p-8 rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#8B5CF6]/40 transition-colors flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#8B5CF6]/40 transition-colors flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl text-center sm:text-left">
             <div>
               <span className="text-xs font-mono uppercase tracking-wider text-[#8B5CF6] font-bold block mb-1">
                 READY TO LAUNCH?
               </span>
-              <h3 className="text-2xl font-extrabold text-white">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-white">
                 Need a modern website like these?
               </h3>
               <p className="text-sm text-[#94A3B8] mt-1">
@@ -196,7 +196,7 @@ export const Projects: React.FC = () => {
                 e.preventDefault();
                 scrollToSection('contact');
               }}
-              className="btn btn-primary whitespace-nowrap cursor-pointer group"
+              className="btn btn-primary w-full sm:w-auto whitespace-nowrap cursor-pointer group min-h-[48px] justify-center"
             >
               <span>GET IN TOUCH</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -208,7 +208,7 @@ export const Projects: React.FC = () => {
       {/* Case Study Modal with Smooth Fade and Scale Transitions */}
       {selectedProject && (
         <div
-          className={`fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-200 ${
+          className={`fixed inset-0 z-[1000] flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md transition-opacity duration-200 ${
             isClosingModal ? 'opacity-0' : 'opacity-100'
           }`}
           onClick={closeModal}
@@ -217,52 +217,52 @@ export const Projects: React.FC = () => {
           aria-labelledby="modal-title"
         >
           <div
-            className={`relative w-full max-w-2xl max-h-[90vh] flex flex-col rounded-2xl bg-[#111827] border border-[#1E293B] shadow-2xl overflow-hidden transition-all duration-200 ease-out ${
+            className={`relative w-full max-w-[calc(100vw-20px)] sm:max-w-2xl max-h-[92vh] flex flex-col rounded-2xl bg-[#111827] border border-[#1E293B] shadow-2xl overflow-hidden transition-all duration-200 ease-out ${
               isClosingModal ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
             }`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
             <div 
-              className="h-40 flex items-center justify-center relative border-b border-[#1E293B] shrink-0"
+              className="h-36 sm:h-40 flex items-center justify-center relative border-b border-[#1E293B] shrink-0"
               style={{ background: selectedProject.previewGradient }}
             >
-              <div className="w-14 h-14 rounded-2xl bg-[#0E1428]/90 border border-[#1E293B] flex items-center justify-center shadow-xl">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#0E1428]/90 border border-[#1E293B] flex items-center justify-center shadow-xl">
                 {getProjectIcon(selectedProject.id)}
               </div>
 
               <button
                 type="button"
                 onClick={closeModal}
-                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#0E1428]/90 border border-[#1E293B] flex items-center justify-center text-[#94A3B8] hover:text-white transition-colors cursor-pointer"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 w-9 h-9 rounded-full bg-[#0E1428]/90 border border-[#1E293B] flex items-center justify-center text-[#94A3B8] hover:text-white transition-colors cursor-pointer z-10"
                 aria-label="Close modal"
               >
                 <X className="w-4 h-4" />
               </button>
 
-              <div className="absolute top-4 left-4 flex items-center gap-2">
-                <span className="text-[11px] font-bold px-2.5 py-0.5 rounded bg-[#0E1428]/90 border border-[#1E293B] text-[#A78BFA]">
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 right-14 flex items-center gap-1.5 flex-wrap">
+                <span className="text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded bg-[#0E1428]/90 border border-[#1E293B] text-[#A78BFA] whitespace-nowrap">
                   {selectedProject.projectType}
                 </span>
-                <span className="text-[11px] font-medium px-2.5 py-0.5 rounded bg-[#0E1428]/80 border border-[#1E293B] text-[#94A3B8]">
+                <span className="text-[10px] sm:text-[11px] font-medium px-2 py-0.5 rounded bg-[#0E1428]/80 border border-[#1E293B] text-[#94A3B8] whitespace-nowrap">
                   {selectedProject.category}
                 </span>
               </div>
             </div>
 
             {/* Modal Content */}
-            <div className="p-6 sm:p-7 overflow-y-auto space-y-5">
+            <div className="p-4 sm:p-7 overflow-y-auto space-y-4 sm:space-y-5">
               <div>
-                <h3 id="modal-title" className="text-2xl font-extrabold text-white mb-2">
+                <h3 id="modal-title" className="text-xl sm:text-2xl font-extrabold text-white mb-2">
                   {selectedProject.title}
                 </h3>
-                <p className="text-sm text-[#94A3B8] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
                   {selectedProject.overview || selectedProject.description}
                 </p>
               </div>
 
               {/* Action Buttons: Live Demo & View Code */}
-              <div className="flex flex-wrap items-center gap-3 pt-1">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 pt-1">
                 <button
                   type="button"
                   onClick={() => {
@@ -273,7 +273,7 @@ export const Projects: React.FC = () => {
                       window.open('https://darex-portfolio.vercel.app/', '_blank', 'noopener,noreferrer');
                     }
                   }}
-                  className="btn btn-primary !py-2 !px-4 !text-xs cursor-pointer group"
+                  className="btn btn-primary !py-2.5 !px-4 !text-xs cursor-pointer group justify-center min-h-[44px]"
                   id="modal-live-demo-btn"
                 >
                   <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -284,7 +284,7 @@ export const Projects: React.FC = () => {
                   href={selectedProject.githubUrl || 'https://github.com'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-secondary !py-2 !px-4 !text-xs cursor-pointer group"
+                  className="btn btn-secondary !py-2.5 !px-4 !text-xs cursor-pointer group justify-center min-h-[44px]"
                   id="modal-github-btn"
                 >
                   <Github className="w-3.5 h-3.5 transition-transform group-hover:scale-110" />

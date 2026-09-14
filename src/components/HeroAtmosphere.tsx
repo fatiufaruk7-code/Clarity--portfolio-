@@ -63,19 +63,19 @@ export const HeroAtmosphere: React.FC = () => {
     >
       {/* Slow-moving gradient blobs with parallax */}
       <div 
-        className="absolute -top-32 -left-32 w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-[#8B5CF6]/15 via-[#3B82F6]/10 to-transparent blur-[110px] will-change-transform animate-[blob-float-1_26s_ease-in-out_infinite]"
+        className="absolute -top-16 sm:-top-32 -left-16 sm:-left-32 w-[320px] sm:w-[550px] h-[320px] sm:h-[550px] rounded-full bg-gradient-to-tr from-[#8B5CF6]/15 via-[#3B82F6]/10 to-transparent blur-[60px] sm:blur-[110px] will-change-transform animate-[blob-float-1_26s_ease-in-out_infinite]"
         style={{
           transform: `translate3d(${offset.x * 1.2}px, ${offset.y * 1.2}px, 0)`,
         }}
       />
       <div 
-        className="absolute top-1/4 -right-24 w-[500px] h-[500px] rounded-full bg-gradient-to-bl from-[#3B82F6]/12 via-[#8B5CF6]/8 to-transparent blur-[120px] will-change-transform animate-[blob-float-2_28s_ease-in-out_infinite]"
+        className="absolute top-1/4 -right-16 sm:-right-24 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-gradient-to-bl from-[#3B82F6]/12 via-[#8B5CF6]/8 to-transparent blur-[60px] sm:blur-[120px] will-change-transform animate-[blob-float-2_28s_ease-in-out_infinite]"
         style={{
           transform: `translate3d(${-offset.x * 1.1}px, ${-offset.y * 1.1}px, 0)`,
         }}
       />
       <div 
-        className="absolute bottom-[-100px] left-1/3 w-[450px] h-[450px] rounded-full bg-gradient-to-t from-[#EC4899]/06 via-[#8B5CF6]/08 to-transparent blur-[130px] will-change-transform animate-[blob-float-3_30s_ease-in-out_infinite]"
+        className="absolute bottom-[-50px] sm:bottom-[-100px] left-1/4 sm:left-1/3 w-[280px] sm:w-[450px] h-[280px] sm:h-[450px] rounded-full bg-gradient-to-t from-[#EC4899]/06 via-[#8B5CF6]/08 to-transparent blur-[60px] sm:blur-[130px] will-change-transform animate-[blob-float-3_30s_ease-in-out_infinite]"
         style={{
           transform: `translate3d(${offset.x * 0.7}px, ${offset.y * 0.7}px, 0)`,
         }}

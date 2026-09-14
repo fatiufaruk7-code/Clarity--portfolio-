@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const techBadges = ['HTML', 'CSS', 'JavaScript', 'React', 'Git', 'GitHub'];
+  const techBadges = ['HTML', 'CSS', 'JavaScript', 'React', 'Git', 'GitHub', 'Vercel', 'Firebase'];
 
   return (
     <section className="hero-section relative overflow-hidden" id="home">

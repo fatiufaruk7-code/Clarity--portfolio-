@@ -115,7 +115,7 @@ export const Contact: React.FC = () => {
                     <span className="text-xs text-[#94A3B8] font-semibold block">Email Address</span>
                     <a 
                       href={`mailto:${personalInfo.email}`} 
-                      className="text-sm font-bold text-white hover:text-[#A78BFA] transition-colors truncate block"
+                      className="text-xs sm:text-sm font-bold text-white hover:text-[#A78BFA] transition-colors truncate block"
                     >
                       {personalInfo.email}
                     </a>
@@ -123,7 +123,7 @@ export const Contact: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="p-2 rounded-lg bg-[#0E1428] border border-[#1E293B] text-[#94A3B8] hover:text-white hover:border-[#8B5CF6]/50 transition-all active:scale-95 cursor-pointer"
+                    className="p-2 rounded-lg bg-[#0E1428] border border-[#1E293B] text-[#94A3B8] hover:text-white hover:border-[#8B5CF6]/50 transition-all active:scale-95 cursor-pointer shrink-0"
                     title="Copy email"
                     aria-label="Copy email"
                   >
@@ -142,7 +142,7 @@ export const Contact: React.FC = () => {
                       href={personalInfo.socials.whatsapp} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-sm font-bold text-white hover:text-[#22C55E] transition-colors block"
+                      className="text-xs sm:text-sm font-bold text-white hover:text-[#22C55E] transition-colors block"
                     >
                       {personalInfo.socials.whatsappNumber}
                     </a>
@@ -150,7 +150,7 @@ export const Contact: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleCopyPhone}
-                    className="p-2 rounded-lg bg-[#0E1428] border border-[#1E293B] text-[#94A3B8] hover:text-white hover:border-[#22C55E]/50 transition-all active:scale-95 cursor-pointer"
+                    className="p-2 rounded-lg bg-[#0E1428] border border-[#1E293B] text-[#94A3B8] hover:text-white hover:border-[#22C55E]/50 transition-all active:scale-95 cursor-pointer shrink-0"
                     title="Copy phone"
                     aria-label="Copy phone"
                   >
