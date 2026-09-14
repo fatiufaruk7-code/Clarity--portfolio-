@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Mail, 
   MessageCircle, 
@@ -22,6 +22,24 @@ export const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
+
+  useEffect(() => {
+    const handleContextSelection = (e: Event) => {
+      const customEvent = e as CustomEvent<{ projectType?: string; note?: string }>;
+      if (customEvent.detail) {
+        setSubmitted(false);
+        const { projectType, note } = customEvent.detail;
+        setFormData((prev) => ({
+          ...prev,
+          projectType: projectType || prev.projectType,
+          message: note || prev.message,
+        }));
+      }
+    };
+
+    window.addEventListener('clarity:select-service', handleContextSelection);
+    return () => window.removeEventListener('clarity:select-service', handleContextSelection);
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

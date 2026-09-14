@@ -1,31 +1,46 @@
 /**
- * Smoothly scrolls to a section ID while taking the fixed 80px navbar height into account.
- * Updates the browser URL hash without harsh jumping.
+ * Navigation and smooth scrolling utilities for Clarity Creative
  */
-export const scrollToSection = (id: string, updateHash: boolean = true) => {
-  if (typeof window === 'undefined') return;
 
-  if (id === 'home') {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    if (updateHash && window.location.hash !== '' && window.location.hash !== '#home') {
+export const scrollToSection = (
+  targetId: string,
+  options?: { offset?: number; callback?: () => void }
+) => {
+  const cleanId = targetId.replace(/^#/, '');
+
+  if (cleanId === 'home' || cleanId === 'top' || !cleanId) {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    if (window.location.hash && window.location.hash !== '#home') {
       window.history.pushState(null, '', '#home');
     }
+    options?.callback?.();
     return;
   }
 
-  const element = document.getElementById(id);
+  const element = document.getElementById(cleanId);
   if (element) {
-    const headerOffset = 80;
+    const headerOffset = options?.offset ?? 75;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
     window.scrollTo({
-      top: offsetPosition,
+      top: Math.max(0, offsetPosition),
       behavior: 'smooth',
     });
 
-    if (updateHash) {
-      window.history.pushState(null, '', `#${id}`);
-    }
+    window.history.pushState(null, '', `#${cleanId}`);
+    options?.callback?.();
   }
+};
+
+export const triggerContactWithContext = (projectType: string, note?: string) => {
+  window.dispatchEvent(
+    new CustomEvent('clarity:select-service', {
+      detail: { projectType, note },
+    })
+  );
+  scrollToSection('contact');
 };

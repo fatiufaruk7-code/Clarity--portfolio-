@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Sparkles, Copy, Check, Terminal, ExternalLink } from 'lucide-react';
 import { personalInfo, codeSnippetString } from '../data/portfolioData.ts';
+import { scrollToSection } from '../utils/navigation.ts';
 
 export const Hero: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -49,12 +50,28 @@ export const Hero: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="hero-cta">
-              <a href="#contact" className="btn btn-primary" id="hero-cta-contact">
+              <a 
+                href="#contact" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('contact');
+                }}
+                className="btn btn-primary" 
+                id="hero-cta-contact"
+              >
                 <span>START A PROJECT</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
-              <a href="#projects" className="btn btn-secondary" id="hero-cta-projects">
+              <a 
+                href="#projects" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('projects');
+                }}
+                className="btn btn-secondary" 
+                id="hero-cta-projects"
+              >
                 <span>VIEW MY WORK</span>
                 <ExternalLink className="w-4 h-4 text-[#8B5CF6]" />
               </a>

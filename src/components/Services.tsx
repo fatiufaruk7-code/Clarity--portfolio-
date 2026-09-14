@@ -9,6 +9,7 @@ import {
   ArrowUpRight 
 } from 'lucide-react';
 import { servicesData } from '../data/portfolioData.ts';
+import { triggerContactWithContext } from '../utils/navigation.ts';
 
 export const Services: React.FC = () => {
   const getServiceIcon = (iconName: string) => {
@@ -57,10 +58,15 @@ export const Services: React.FC = () => {
               <h3>{service.title}</h3>
               <p>{service.description}</p>
 
-              <div className="mt-5 pt-4 border-t border-[#1E293B] flex items-center justify-between text-xs font-bold text-[#A78BFA] group-hover:text-white transition-colors">
+              <button
+                type="button"
+                onClick={() => triggerContactWithContext(service.title, `Hi, I am interested in inquiring about your "${service.title}" service.`)}
+                className="w-full mt-5 pt-4 border-t border-[#1E293B] flex items-center justify-between text-xs font-bold text-[#A78BFA] group-hover:text-white transition-colors cursor-pointer bg-transparent text-left"
+                aria-label={`Inquire about ${service.title}`}
+              >
                 <span>Inquire About Service</span>
                 <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[#8B5CF6]" />
-              </div>
+              </button>
             </div>
           ))}
         </div>

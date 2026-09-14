@@ -1,8 +1,20 @@
 import React from 'react';
 import { Check, ArrowRight, Sparkles } from 'lucide-react';
 import { pricingPackagesData } from '../data/portfolioData.ts';
+import { scrollToSection, triggerContactWithContext } from '../utils/navigation.ts';
 
 export const Pricing: React.FC = () => {
+  const handleSelectPackage = (pkgName: string, price: string) => {
+    let projectCategory = 'Business Website';
+    if (pkgName.toLowerCase().includes('starter')) projectCategory = 'Personal Portfolio';
+    else if (pkgName.toLowerCase().includes('custom')) projectCategory = 'Custom Project';
+    
+    triggerContactWithContext(
+      projectCategory,
+      `Hello, I would like to get started with the ${pkgName} package (${price}).`
+    );
+  };
+
   return (
     <section className="section bg-[#080C18]" id="pricing">
       <div className="container">
@@ -46,7 +58,11 @@ export const Pricing: React.FC = () => {
 
               <a
                 href="#contact"
-                className={`btn ${pkg.popular ? 'btn-primary' : 'btn-secondary'} w-full mt-auto`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleSelectPackage(pkg.name, pkg.price);
+                }}
+                className={`btn ${pkg.popular ? 'btn-primary' : 'btn-secondary'} w-full mt-auto cursor-pointer`}
                 id={`choose-plan-${pkg.id}`}
               >
                 <span>{pkg.ctaText}</span>
@@ -60,7 +76,14 @@ export const Pricing: React.FC = () => {
         <div className="mt-12 text-center text-xs text-[#94A3B8]">
           <p>
             Have special requirements, complex API integrations or tight deadlines?{' '}
-            <a href="#contact" className="text-[#A78BFA] hover:underline font-bold">
+            <a 
+              href="#contact" 
+              onClick={(e) => {
+                e.preventDefault();
+                triggerContactWithContext('Custom Project', 'Hello, I have custom project requirements and would like to request a tailored quote.');
+              }}
+              className="text-[#A78BFA] hover:underline font-bold cursor-pointer"
+            >
               Contact me directly for a custom quote.
             </a>
           </p>

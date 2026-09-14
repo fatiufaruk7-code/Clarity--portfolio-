@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight, MessageCircle } from 'lucide-react';
 import { PWAInstallButton } from './PWAInstallButton.tsx';
+import { scrollToSection } from '../utils/navigation.ts';
 
 interface NavbarProps {
   activeSection: string;
@@ -27,12 +28,31 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     { label: 'CONTACT', href: '#contact', id: 'contact' },
   ];
 
+  const handleNavClick = (e: React.MouseEvent, targetId: string) => {
+    e.preventDefault();
+    scrollToSection(targetId);
+  };
+
+  const handleMobileNavClick = (e: React.MouseEvent, targetId: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    // Slight timeout allows drawer to begin transition without layout jump
+    setTimeout(() => {
+      scrollToSection(targetId);
+    }, 50);
+  };
+
   return (
     <header className={isScrolled ? 'scrolled' : ''} id="main-header">
       <div className="container">
         <nav className="navbar" aria-label="Main Navigation">
           {/* Clarity Creative Logo */}
-          <a href="#home" className="logo" aria-label="Clarity Creative Homepage">
+          <a 
+            href="#home" 
+            onClick={(e) => handleNavClick(e, 'home')}
+            className="logo" 
+            aria-label="Clarity Creative Homepage"
+          >
             <span className="logo-badge" aria-hidden="true">
               <span className="badge-c">C</span>
               <span className="badge-sup">2</span>
@@ -48,6 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               <li key={item.id}>
                 <a
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.id)}
                   className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
                 >
                   {item.label}
@@ -62,6 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
             <a
               href="#contact"
+              onClick={(e) => handleNavClick(e, 'contact')}
               className="btn btn-primary !py-2.5 !px-5 !text-xs !rounded-full shadow-md shadow-[#8B5CF6]/30"
               id="nav-cta-btn"
             >
@@ -94,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               <li key={item.id}>
                 <a
                   href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleMobileNavClick(e, item.id)}
                   className={`flex items-center justify-between py-2.5 text-base font-bold transition-colors ${
                     activeSection === item.id
                       ? 'text-[#A78BFA] border-l-2 border-[#8B5CF6] pl-3'
@@ -115,7 +137,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
             <a
               href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleMobileNavClick(e, 'contact')}
               className="btn btn-primary w-full text-center justify-center py-3 text-sm font-bold"
             >
               <span>START A PROJECT</span>

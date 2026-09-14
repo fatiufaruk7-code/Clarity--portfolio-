@@ -1,19 +1,20 @@
 import React from 'react';
 import { ArrowUp, Github, Twitter, MessageCircle, Heart } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData.ts';
+import { scrollToSection } from '../utils/navigation.ts';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToSection('home');
   };
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '#home', id: 'home' },
+    { label: 'About', href: '#about', id: 'about' },
+    { label: 'Services', href: '#services', id: 'services' },
+    { label: 'Projects', href: '#projects', id: 'projects' },
+    { label: 'Pricing', href: '#pricing', id: 'pricing' },
+    { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   return (
@@ -22,7 +23,15 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-[#1E293B]">
           {/* Brand & Tagline */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <a href="#home" className="logo mb-2" aria-label="Clarity Creative Homepage">
+            <a 
+              href="#home" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('home');
+              }}
+              className="logo mb-2" 
+              aria-label="Clarity Creative Homepage"
+            >
               <span className="logo-badge" aria-hidden="true">
                 <span className="badge-c">C</span>
                 <span className="badge-sup">2</span>
@@ -40,7 +49,14 @@ export const Footer: React.FC = () => {
           <ul className="flex items-center gap-6 flex-wrap justify-center text-xs font-semibold text-[#94A3B8]">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="hover:text-white transition-colors">
+                <a 
+                  href={link.href} 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.id);
+                  }}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
                   {link.label}
                 </a>
               </li>

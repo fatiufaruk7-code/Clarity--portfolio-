@@ -1,6 +1,7 @@
 import React from 'react';
 import { Code2, GraduationCap, Palette, Lightbulb, CheckCircle2, ArrowRight } from 'lucide-react';
 import { aboutCards, personalInfo } from '../data/portfolioData.ts';
+import { scrollToSection } from '../utils/navigation.ts';
 
 export const About: React.FC = () => {
   const getIcon = (iconName: string) => {
@@ -60,7 +61,14 @@ export const About: React.FC = () => {
               ))}
             </div>
 
-            <a href="#contact" className="btn btn-primary inline-flex">
+            <a 
+              href="#contact" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contact');
+              }}
+              className="btn btn-primary inline-flex"
+            >
               <span>LET&apos;S WORK TOGETHER</span>
               <ArrowRight className="w-4 h-4" />
             </a>

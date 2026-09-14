@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { projectsData } from '../data/portfolioData.ts';
 import { ProjectItem } from '../types.ts';
+import { scrollToSection, triggerContactWithContext } from '../utils/navigation.ts';
 
 export const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
@@ -167,7 +168,14 @@ export const Projects: React.FC = () => {
             </p>
           </div>
 
-          <a href="#contact" className="btn btn-primary whitespace-nowrap">
+          <a 
+            href="#contact" 
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection('contact');
+            }}
+            className="btn btn-primary whitespace-nowrap cursor-pointer"
+          >
             <span>GET IN TOUCH</span>
             <ArrowRight className="w-4 h-4" />
           </a>
@@ -199,7 +207,7 @@ export const Projects: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#0E1428]/90 border border-[#1E293B] flex items-center justify-center text-[#94A3B8] hover:text-white transition-colors"
+                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#0E1428]/90 border border-[#1E293B] flex items-center justify-center text-[#94A3B8] hover:text-white transition-colors cursor-pointer"
                 aria-label="Close modal"
               >
                 <X className="w-4 h-4" />
@@ -224,6 +232,37 @@ export const Projects: React.FC = () => {
                 <p className="text-sm text-[#94A3B8] leading-relaxed">
                   {selectedProject.overview || selectedProject.description}
                 </p>
+              </div>
+
+              {/* Action Buttons: Live Demo & View Code */}
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (selectedProject.id === 'portfolio-website') {
+                      setSelectedProject(null);
+                      scrollToSection('home');
+                    } else {
+                      window.open('https://darex-portfolio.vercel.app/', '_blank', 'noopener,noreferrer');
+                    }
+                  }}
+                  className="btn btn-primary !py-2 !px-4 !text-xs cursor-pointer"
+                  id="modal-live-demo-btn"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span>Live Demo</span>
+                </button>
+
+                <a
+                  href={selectedProject.githubUrl || 'https://github.com'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary !py-2 !px-4 !text-xs cursor-pointer"
+                  id="modal-github-btn"
+                >
+                  <Github className="w-3.5 h-3.5" />
+                  <span>View Code</span>
+                </a>
               </div>
 
               {selectedProject.objective && (
@@ -267,19 +306,26 @@ export const Projects: React.FC = () => {
 
             {/* Modal Footer */}
             <div className="p-4 sm:p-5 bg-[#0E1428] border-t border-[#1E293B] flex items-center justify-between gap-3">
-              <a
-                href="#contact"
-                onClick={() => setSelectedProject(null)}
-                className="btn btn-primary !py-2 !px-4 !text-xs"
+              <button
+                type="button"
+                onClick={() => {
+                  const proj = selectedProject;
+                  setSelectedProject(null);
+                  triggerContactWithContext(
+                    proj.category || 'Custom Project',
+                    `Hello, I would like to inquire about building a project similar to "${proj.title}".`
+                  );
+                }}
+                className="btn btn-primary !py-2 !px-4 !text-xs cursor-pointer"
               >
                 <span>Inquire About Similar Project</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+              </button>
 
               <button
                 type="button"
                 onClick={() => setSelectedProject(null)}
-                className="btn btn-secondary !py-2 !px-4 !text-xs"
+                className="btn btn-secondary !py-2 !px-4 !text-xs cursor-pointer"
               >
                 Close
               </button>
