@@ -15,14 +15,24 @@ import {
 import { projectsData } from '../data/portfolioData.ts';
 import { ProjectItem } from '../types.ts';
 import { scrollToSection, triggerContactWithContext } from '../utils/navigation.ts';
+import { ScrollReveal } from './ScrollReveal.tsx';
 
 export const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [isClosingModal, setIsClosingModal] = useState(false);
+
+  const closeModal = () => {
+    setIsClosingModal(true);
+    setTimeout(() => {
+      setSelectedProject(null);
+      setIsClosingModal(false);
+    }, 220);
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setSelectedProject(null);
+      if (e.key === 'Escape' && selectedProject) {
+        closeModal();
       }
     };
 
@@ -57,142 +67,159 @@ export const Projects: React.FC = () => {
   return (
     <section className="section" id="projects">
       <div className="container">
-        <div className="section-title">
-          <p>PORTFOLIO SHOWCASE</p>
-          <h2>
-            SELECTED <span>PROJECTS</span>
-          </h2>
-          <p className="section-subtitle-text">
-            A curated showcase of websites and digital solutions built with responsive ergonomics, clean code, and intuitive user interfaces.
-          </p>
-        </div>
+        <ScrollReveal direction="up" distance={20}>
+          <div className="section-title">
+            <p>PORTFOLIO SHOWCASE</p>
+            <h2>
+              SELECTED <span>PROJECTS</span>
+            </h2>
+            <p className="section-subtitle-text">
+              A curated showcase of websites and digital solutions built with responsive ergonomics, clean code, and intuitive user interfaces.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        {/* 4 Projects Grid */}
+        {/* 4 Projects Grid with Staggered ScrollReveal */}
         <div className="projects-grid">
-          {projectsData.map((project) => (
-            <article
+          {projectsData.map((project, index) => (
+            <ScrollReveal
               key={project.id}
-              className="project-card group"
-              id={`project-${project.id}`}
+              direction="up"
+              delay={100 + index * 90}
+              distance={26}
+              className="h-full"
             >
-              {/* Thumbnail / Visual Header */}
-              <div 
-                className="project-thumb cursor-pointer"
-                style={{ background: project.previewGradient }}
-                onClick={() => setSelectedProject(project)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setSelectedProject(project);
-                  }
-                }}
-                aria-label={`Open case study for ${project.title}`}
+              <article
+                className="project-card group h-full flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(139,92,246,0.3)]"
+                id={`project-${project.id}`}
               >
-                <span className="project-thumb-badge">
-                  {project.projectType}
-                </span>
+                {/* Thumbnail / Visual Header */}
+                <div 
+                  className="project-thumb cursor-pointer overflow-hidden relative"
+                  style={{ background: project.previewGradient }}
+                  onClick={() => setSelectedProject(project)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setSelectedProject(project);
+                    }
+                  }}
+                  aria-label={`Open case study for ${project.title}`}
+                >
+                  <span className="project-thumb-badge">
+                    {project.projectType}
+                  </span>
 
-                <div className="project-thumb-icon">
-                  {getProjectIcon(project.id)}
+                  <div className="project-thumb-icon transform group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(139,92,246,0.4)] transition-all duration-300">
+                    {getProjectIcon(project.id)}
+                  </div>
                 </div>
-              </div>
 
-              {/* Card Body */}
-              <div className="project-info">
-                <div className="project-tags">
-                  {project.tags.map((tag, idx) => (
-                    <span key={idx} className="project-tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <h3 className="project-title group-hover:text-[#A78BFA] transition-colors">
-                  {project.title}
-                </h3>
-
-                <p className="project-desc">
-                  {project.description}
-                </p>
-
-                {/* Highlights */}
-                <div className="space-y-1.5 mb-5">
-                  {project.highlights.slice(0, 2).map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-[#E2E8F0]">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#8B5CF6] flex-shrink-0" />
-                      <span className="line-clamp-1">{item}</span>
+                {/* Card Body */}
+                <div className="project-info flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="project-tags">
+                      {project.tags.map((tag, idx) => (
+                        <span key={idx} className="project-tag">
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-                  ))}
-                </div>
 
-                {/* Action Bar */}
-                <div className="project-actions">
-                  <button
-                    type="button"
-                    onClick={() => setSelectedProject(project)}
-                    className="project-btn"
-                  >
-                    <span>View Case Study</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                    <h3 className="project-title group-hover:text-[#A78BFA] transition-colors">
+                      {project.title}
+                    </h3>
 
-                  <div className="flex items-center gap-2">
+                    <p className="project-desc">
+                      {project.description}
+                    </p>
+
+                    {/* Highlights */}
+                    <div className="space-y-1.5 mb-5">
+                      {project.highlights.slice(0, 2).map((item, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-xs text-[#E2E8F0]">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#8B5CF6] flex-shrink-0" />
+                          <span className="line-clamp-1">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action Bar */}
+                  <div className="project-actions pt-2">
                     <button
                       type="button"
                       onClick={() => setSelectedProject(project)}
-                      className="p-2 rounded-lg bg-[#0E1428] border border-[#1E293B] hover:border-[#8B5CF6]/50 text-[#94A3B8] hover:text-white transition-colors"
-                      title="Project Details"
+                      className="project-btn group/btn"
                     >
-                      <Sparkles className="w-4 h-4 text-[#8B5CF6]" />
+                      <span>View Case Study</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
                     </button>
+
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setSelectedProject(project)}
+                        className="p-2 rounded-lg bg-[#0E1428] border border-[#1E293B] hover:border-[#8B5CF6]/50 text-[#94A3B8] hover:text-white transition-all hover:scale-105"
+                        title="Project Details"
+                      >
+                        <Sparkles className="w-4 h-4 text-[#8B5CF6]" />
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Project Section Call-to-Action */}
-        <div className="mt-14 p-8 rounded-2xl bg-[#111827] border border-[#1E293B] flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <span className="text-xs font-mono uppercase tracking-wider text-[#8B5CF6] font-bold block mb-1">
-              READY TO LAUNCH?
-            </span>
-            <h3 className="text-2xl font-extrabold text-white">
-              Need a modern website like these?
-            </h3>
-            <p className="text-sm text-[#94A3B8] mt-1">
-              Let&apos;s build a fast, responsive solution tailored to your goals.
-            </p>
-          </div>
+        <ScrollReveal direction="up" delay={250} distance={20}>
+          <div className="mt-14 p-8 rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#8B5CF6]/40 transition-colors flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-wider text-[#8B5CF6] font-bold block mb-1">
+                READY TO LAUNCH?
+              </span>
+              <h3 className="text-2xl font-extrabold text-white">
+                Need a modern website like these?
+              </h3>
+              <p className="text-sm text-[#94A3B8] mt-1">
+                Let&apos;s build a fast, responsive solution tailored to your goals.
+              </p>
+            </div>
 
-          <a 
-            href="#contact" 
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('contact');
-            }}
-            className="btn btn-primary whitespace-nowrap cursor-pointer"
-          >
-            <span>GET IN TOUCH</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
-        </div>
+            <a 
+              href="#contact" 
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('contact');
+              }}
+              className="btn btn-primary whitespace-nowrap cursor-pointer group"
+            >
+              <span>GET IN TOUCH</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
 
-      {/* Case Study Modal */}
+      {/* Case Study Modal with Smooth Fade and Scale Transitions */}
       {selectedProject && (
         <div
-          className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
-          onClick={() => setSelectedProject(null)}
+          className={`fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-200 ${
+            isClosingModal ? 'opacity-0' : 'opacity-100'
+          }`}
+          onClick={closeModal}
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
         >
           <div
-            className="relative w-full max-w-2xl max-h-[90vh] flex flex-col rounded-2xl bg-[#111827] border border-[#1E293B] shadow-2xl overflow-hidden"
+            className={`relative w-full max-w-2xl max-h-[90vh] flex flex-col rounded-2xl bg-[#111827] border border-[#1E293B] shadow-2xl overflow-hidden transition-all duration-200 ease-out ${
+              isClosingModal ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
+            }`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
@@ -206,7 +233,7 @@ export const Projects: React.FC = () => {
 
               <button
                 type="button"
-                onClick={() => setSelectedProject(null)}
+                onClick={closeModal}
                 className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#0E1428]/90 border border-[#1E293B] flex items-center justify-center text-[#94A3B8] hover:text-white transition-colors cursor-pointer"
                 aria-label="Close modal"
               >
@@ -240,16 +267,16 @@ export const Projects: React.FC = () => {
                   type="button"
                   onClick={() => {
                     if (selectedProject.id === 'portfolio-website') {
-                      setSelectedProject(null);
+                      closeModal();
                       scrollToSection('home');
                     } else {
                       window.open('https://darex-portfolio.vercel.app/', '_blank', 'noopener,noreferrer');
                     }
                   }}
-                  className="btn btn-primary !py-2 !px-4 !text-xs cursor-pointer"
+                  className="btn btn-primary !py-2 !px-4 !text-xs cursor-pointer group"
                   id="modal-live-demo-btn"
                 >
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                   <span>Live Demo</span>
                 </button>
 
@@ -257,10 +284,10 @@ export const Projects: React.FC = () => {
                   href={selectedProject.githubUrl || 'https://github.com'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-secondary !py-2 !px-4 !text-xs cursor-pointer"
+                  className="btn btn-secondary !py-2 !px-4 !text-xs cursor-pointer group"
                   id="modal-github-btn"
                 >
-                  <Github className="w-3.5 h-3.5" />
+                  <Github className="w-3.5 h-3.5 transition-transform group-hover:scale-110" />
                   <span>View Code</span>
                 </a>
               </div>
@@ -310,21 +337,21 @@ export const Projects: React.FC = () => {
                 type="button"
                 onClick={() => {
                   const proj = selectedProject;
-                  setSelectedProject(null);
+                  closeModal();
                   triggerContactWithContext(
                     proj.category || 'Custom Project',
                     `Hello, I would like to inquire about building a project similar to "${proj.title}".`
                   );
                 }}
-                className="btn btn-primary !py-2 !px-4 !text-xs cursor-pointer"
+                className="btn btn-primary !py-2 !px-4 !text-xs cursor-pointer group"
               >
                 <span>Inquire About Similar Project</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
               </button>
 
               <button
                 type="button"
-                onClick={() => setSelectedProject(null)}
+                onClick={closeModal}
                 className="btn btn-secondary !py-2 !px-4 !text-xs cursor-pointer"
               >
                 Close

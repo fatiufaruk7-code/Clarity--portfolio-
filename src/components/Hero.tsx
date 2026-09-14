@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, Sparkles, Copy, Check, Terminal, ExternalLink } from 'lucide-react';
 import { personalInfo, codeSnippetString } from '../data/portfolioData.ts';
 import { scrollToSection } from '../utils/navigation.ts';
+import { HeroAtmosphere } from './HeroAtmosphere.tsx';
 
 export const Hero: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -15,40 +16,69 @@ export const Hero: React.FC = () => {
   const techBadges = ['HTML', 'CSS', 'JavaScript', 'React', 'Git', 'GitHub'];
 
   return (
-    <section className="hero-section" id="home">
+    <section className="hero-section relative overflow-hidden" id="home">
+      {/* Dynamic Digital Atmosphere Background */}
+      <HeroAtmosphere />
+
       {/* Background ambient lighting */}
       <div className="mesh-1" aria-hidden="true" />
       <div className="mesh-2" aria-hidden="true" />
 
-      <div className="container">
+      <div className="container relative z-10">
         <div className="hero-grid">
-          {/* Left Column: Headline & Value Proposition */}
+          {/* Left Column: Headline & Value Proposition with Staggered Entrance */}
           <div className="hero-text-content">
             {/* Small Label with Status Dot */}
-            <div className="status-badge" id="hero-badge">
+            <div 
+              className="status-badge hero-anim-item" 
+              id="hero-badge"
+              style={{ animationDelay: '100ms' }}
+            >
               <span className="status-dot" />
               <span>{personalInfo.supportingTitle}</span>
             </div>
 
-            {/* Main Headline */}
+            {/* Main Headline with Line-by-Line Reveal */}
             <h1 className="hero-title">
-              BUILDING MODERN<br />
-              <span className="bg-gradient-to-r from-[#8B5CF6] via-[#60A5FA] to-[#EC4899] bg-clip-text text-transparent">
-                DIGITAL EXPERIENCES.
+              <span className="block overflow-hidden pb-1">
+                <span 
+                  className="block hero-anim-line"
+                  style={{ animationDelay: '250ms' }}
+                >
+                  BUILDING MODERN
+                </span>
+              </span>
+              <span className="block overflow-hidden pb-1">
+                <span 
+                  className="block hero-anim-line bg-gradient-to-r from-[#8B5CF6] via-[#60A5FA] to-[#EC4899] bg-clip-text text-transparent"
+                  style={{ animationDelay: '380ms' }}
+                >
+                  DIGITAL EXPERIENCES.
+                </span>
               </span>
             </h1>
 
-            {/* Supporting Headline */}
-            <p className="hero-tagline">
-              {personalInfo.tagline}
-            </p>
+            {/* Supporting Tagline */}
+            <div className="overflow-hidden">
+              <p 
+                className="hero-tagline hero-anim-item"
+                style={{ animationDelay: '520ms' }}
+              >
+                {personalInfo.tagline}
+              </p>
+            </div>
 
             {/* Description */}
-            <p className="hero-subtitle">
-              {personalInfo.shortDescription}
-            </p>
+            <div className="overflow-hidden">
+              <p 
+                className="hero-subtitle hero-anim-item"
+                style={{ animationDelay: '660ms' }}
+              >
+                {personalInfo.shortDescription}
+              </p>
+            </div>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons with Stagger */}
             <div className="hero-cta">
               <a 
                 href="#contact" 
@@ -56,11 +86,12 @@ export const Hero: React.FC = () => {
                   e.preventDefault();
                   scrollToSection('contact');
                 }}
-                className="btn btn-primary" 
+                className="btn btn-primary hero-anim-item" 
                 id="hero-cta-contact"
+                style={{ animationDelay: '800ms' }}
               >
                 <span>START A PROJECT</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
 
               <a 
@@ -69,19 +100,29 @@ export const Hero: React.FC = () => {
                   e.preventDefault();
                   scrollToSection('projects');
                 }}
-                className="btn btn-secondary" 
+                className="btn btn-secondary hero-anim-item" 
                 id="hero-cta-projects"
+                style={{ animationDelay: '900ms' }}
               >
                 <span>VIEW MY WORK</span>
-                <ExternalLink className="w-4 h-4 text-[#8B5CF6]" />
+                <ExternalLink className="w-4 h-4 text-[#8B5CF6] transition-transform group-hover:translate-x-0.5" />
               </a>
             </div>
 
-            {/* Technology Badges */}
+            {/* Technology Badges Appearing One After Another */}
             <div className="hero-tech-badges">
-              <span className="hero-tech-label">CORE STACK:</span>
-              {techBadges.map((tech) => (
-                <span key={tech} className="hero-tech-pill">
+              <span 
+                className="hero-tech-label hero-anim-item"
+                style={{ animationDelay: '1000ms' }}
+              >
+                CORE STACK:
+              </span>
+              {techBadges.map((tech, index) => (
+                <span 
+                  key={tech} 
+                  className="hero-tech-pill hero-anim-badge"
+                  style={{ animationDelay: `${1080 + index * 60}ms` }}
+                >
                   {tech}
                 </span>
               ))}
@@ -90,7 +131,11 @@ export const Hero: React.FC = () => {
 
           {/* Right Column: Hero Visual - Futuristic Code Terminal Card */}
           <div className="hero-visual">
-            <div className="hero-card" id="hero-code-terminal">
+            <div 
+              className="hero-card hero-anim-terminal" 
+              id="hero-code-terminal"
+              style={{ animationDelay: '400ms' }}
+            >
               <div className="card-header">
                 <div className="window-dots">
                   <span className="window-dot dot-red" />

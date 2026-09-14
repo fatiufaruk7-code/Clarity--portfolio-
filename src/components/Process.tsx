@@ -1,6 +1,7 @@
 import React from 'react';
 import { Compass, PenTool, Code, Rocket } from 'lucide-react';
 import { processSteps } from '../data/portfolioData.ts';
+import { ScrollReveal } from './ScrollReveal.tsx';
 
 export const Process: React.FC = () => {
   const getStepIcon = (num: string) => {
@@ -21,28 +22,41 @@ export const Process: React.FC = () => {
   return (
     <section className="section" id="process">
       <div className="container">
-        <div className="section-title">
-          <p>WORKFLOW</p>
-          <h2>
-            DEVELOPMENT <span>PROCESS</span>
-          </h2>
-          <p className="section-subtitle-text">
-            A transparent 4-stage process designed to bring your digital vision to life smoothly and efficiently.
-          </p>
-        </div>
+        <ScrollReveal direction="up" distance={20}>
+          <div className="section-title">
+            <p>WORKFLOW</p>
+            <h2>
+              DEVELOPMENT <span>PROCESS</span>
+            </h2>
+            <p className="section-subtitle-text">
+              A transparent 4-stage process designed to bring your digital vision to life smoothly and efficiently.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="process-grid">
-          {processSteps.map((step) => (
-            <div key={step.number} className="process-card" id={`process-step-${step.number}`}>
-              <span className="process-num">{step.number}</span>
+          {processSteps.map((step, index) => (
+            <ScrollReveal
+              key={step.number}
+              direction="up"
+              delay={100 + index * 90}
+              distance={24}
+              className="h-full"
+            >
+              <div 
+                className="process-card group h-full flex flex-col justify-start hover:-translate-y-1.5 transition-all duration-300" 
+                id={`process-step-${step.number}`}
+              >
+                <span className="process-num group-hover:text-[#A78BFA] transition-colors">{step.number}</span>
 
-              <div className="process-icon-box">
-                {getStepIcon(step.number)}
+                <div className="process-icon-box group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(139,92,246,0.35)] transition-all duration-300">
+                  {getStepIcon(step.number)}
+                </div>
+
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
               </div>
-
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

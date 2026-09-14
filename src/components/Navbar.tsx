@@ -50,10 +50,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           <a 
             href="#home" 
             onClick={(e) => handleNavClick(e, 'home')}
-            className="logo" 
+            className="logo group" 
             aria-label="Clarity Creative Homepage"
           >
-            <span className="logo-badge" aria-hidden="true">
+            <span className="logo-badge logo-badge-animated group-hover:scale-105 transition-all duration-300" aria-hidden="true">
               <span className="badge-c">C</span>
               <span className="badge-sup">2</span>
             </span>
@@ -69,9 +69,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                 <a
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.id)}
-                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                  className={`nav-link group ${activeSection === item.id ? 'active' : ''}`}
                 >
-                  {item.label}
+                  <span className="relative z-10">{item.label}</span>
+                  <span 
+                    className={`nav-link-indicator ${activeSection === item.id ? 'nav-link-indicator-active' : ''}`}
+                    aria-hidden="true" 
+                  />
                 </a>
               </li>
             ))}
@@ -112,8 +116,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           id="mobile-drawer"
         >
           <ul className="flex flex-col gap-4 mb-6">
-            {navItems.map((item) => (
-              <li key={item.id}>
+            {navItems.map((item, index) => (
+              <li 
+                key={item.id}
+                className="mobile-nav-item"
+                style={{ animationDelay: `${index * 60}ms` }}
+              >
                 <a
                   href={item.href}
                   onClick={(e) => handleMobileNavClick(e, item.id)}

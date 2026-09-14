@@ -5,6 +5,7 @@
 
 import { useState, useEffect } from 'react';
 import { Preloader } from './components/Preloader.tsx';
+import { CustomCursor } from './components/CustomCursor.tsx';
 import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
 import { TechMarquee } from './components/TechMarquee.tsx';
@@ -62,6 +63,9 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen selection:bg-[#8B5CF6]/30 selection:text-white overflow-hidden bg-[#0B1020]">
+      {/* Custom Sleek Cursor for desktop pointer devices */}
+      <CustomCursor />
+
       {/* Fullscreen Initial Preloader */}
       {loading && <Preloader onComplete={() => setLoading(false)} />}
 
