@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const techBadges = ['HTML', 'CSS', 'JavaScript', 'React', 'Git', 'GitHub', 'Vercel', 'Firebase'];
+  const techBadges = ['HTML', 'CSS', 'JavaScript', 'React', 'Git', 'GitHub'];
 
   return (
     <section className="hero-section relative overflow-hidden" id="home">
@@ -32,18 +32,18 @@ export const Hero: React.FC = () => {
             <div 
               className="status-badge hero-anim-item" 
               id="hero-badge"
-              style={{ animationDelay: '100ms' }}
+              style={{ animationDelay: '180ms' }}
             >
               <span className="status-dot" />
               <span>{personalInfo.supportingTitle}</span>
             </div>
 
-            {/* Main Headline with Line-by-Line Reveal */}
+            {/* Main Headline with Smooth Line Reveal */}
             <h1 className="hero-title">
               <span className="block overflow-hidden pb-1">
                 <span 
                   className="block hero-anim-line"
-                  style={{ animationDelay: '250ms' }}
+                  style={{ animationDelay: '320ms' }}
                 >
                   BUILDING MODERN
                 </span>
@@ -51,28 +51,18 @@ export const Hero: React.FC = () => {
               <span className="block overflow-hidden pb-1">
                 <span 
                   className="block hero-anim-line bg-gradient-to-r from-[#8B5CF6] via-[#60A5FA] to-[#EC4899] bg-clip-text text-transparent"
-                  style={{ animationDelay: '380ms' }}
+                  style={{ animationDelay: '460ms' }}
                 >
-                  DIGITAL EXPERIENCES.
+                  WEBSITES THAT GET YOU NOTICED.
                 </span>
               </span>
             </h1>
 
-            {/* Supporting Tagline */}
-            <div className="overflow-hidden">
-              <p 
-                className="hero-tagline hero-anim-item"
-                style={{ animationDelay: '520ms' }}
-              >
-                {personalInfo.tagline}
-              </p>
-            </div>
-
-            {/* Description */}
+            {/* Supporting Tagline / Subtitle */}
             <div className="overflow-hidden">
               <p 
                 className="hero-subtitle hero-anim-item"
-                style={{ animationDelay: '660ms' }}
+                style={{ animationDelay: '600ms' }}
               >
                 {personalInfo.shortDescription}
               </p>
@@ -88,7 +78,7 @@ export const Hero: React.FC = () => {
                 }}
                 className="btn btn-primary hero-anim-item" 
                 id="hero-cta-contact"
-                style={{ animationDelay: '800ms' }}
+                style={{ animationDelay: '740ms' }}
               >
                 <span>START A PROJECT</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -102,18 +92,18 @@ export const Hero: React.FC = () => {
                 }}
                 className="btn btn-secondary hero-anim-item" 
                 id="hero-cta-projects"
-                style={{ animationDelay: '900ms' }}
+                style={{ animationDelay: '840ms' }}
               >
                 <span>VIEW MY WORK</span>
                 <ExternalLink className="w-4 h-4 text-[#8B5CF6] transition-transform group-hover:translate-x-0.5" />
               </a>
             </div>
 
-            {/* Technology Badges Appearing One After Another */}
+            {/* Technology Badges Appearing Afterward */}
             <div className="hero-tech-badges">
               <span 
                 className="hero-tech-label hero-anim-item"
-                style={{ animationDelay: '1000ms' }}
+                style={{ animationDelay: '940ms' }}
               >
                 CORE STACK:
               </span>
@@ -121,7 +111,7 @@ export const Hero: React.FC = () => {
                 <span 
                   key={tech} 
                   className="hero-tech-pill hero-anim-badge"
-                  style={{ animationDelay: `${1080 + index * 60}ms` }}
+                  style={{ animationDelay: `${1020 + index * 70}ms` }}
                 >
                   {tech}
                 </span>
@@ -134,7 +124,7 @@ export const Hero: React.FC = () => {
             <div 
               className="hero-card hero-anim-terminal" 
               id="hero-code-terminal"
-              style={{ animationDelay: '400ms' }}
+              style={{ animationDelay: '480ms' }}
             >
               <div className="card-header">
                 <div className="window-dots">
@@ -159,16 +149,16 @@ export const Hero: React.FC = () => {
                   <code>
                     <span className="syntax-p">const</span> <span className="syntax-b">developer</span> = &#123;{'\n'}
                     {'  '}brand: <span className="text-[#38BDF8]">&quot;Clarity Creative&quot;</span>,{'\n'}
-                    {'  '}role: <span className="text-[#38BDF8]">&quot;Web Developer &amp; CS Student&quot;</span>,{'\n'}
+                    {'  '}role: <span className="text-[#38BDF8]">&quot;Web Developer • Digital Creative&quot;</span>,{'\n'}
                     {'  '}tagline: <span className="text-[#38BDF8]">&quot;Modern Websites. Clear Solutions.&quot;</span>,{'\n'}
-                    {'  '}stack: [<span className="text-[#A78BFA]">&quot;HTML5&quot;</span>, <span className="text-[#A78BFA]">&quot;CSS3&quot;</span>, <span className="text-[#A78BFA]">&quot;JS&quot;</span>, <span className="text-[#A78BFA]">&quot;React&quot;</span>, <span className="text-[#A78BFA]">&quot;Git&quot;</span>],{'\n'}
+                    {'  '}stack: [<span className="text-[#A78BFA]">&quot;HTML&quot;</span>, <span className="text-[#A78BFA]">&quot;CSS&quot;</span>, <span className="text-[#A78BFA]">&quot;JavaScript&quot;</span>, <span className="text-[#A78BFA]">&quot;React&quot;</span>, <span className="text-[#A78BFA]">&quot;Git&quot;</span>, <span className="text-[#A78BFA]">&quot;GitHub&quot;</span>],{'\n'}
                     {'  '}status: <span className="text-[#10B981]">&quot;Available for projects&quot;</span>{'\n'}
                     &#125;;{'\n\n'}
-                    <span className="syntax-p">function</span> <span className="syntax-y">craftExperience</span>(project) &#123;{'\n'}
+                    <span className="syntax-p">function</span> <span className="syntax-y">craftWebsite</span>(project) &#123;{'\n'}
                     {'  '}<span className="syntax-p">return</span> &#123;{'\n'}
-                    {'    '}speed: <span className="text-[#38BDF8]">&quot;Blazing Fast &amp; Optimized&quot;</span>,{'\n'}
-                    {'    '}design: <span className="text-[#EC4899]">&quot;Clean, Responsive UI&quot;</span>,{'\n'}
-                    {'    '}solution: <span className="text-[#38BDF8]">&quot;Clear Solutions for Real Growth&quot;</span>{'\n'}
+                    {'    '}performance: <span className="text-[#38BDF8]">&quot;Fast, Responsive &amp; Mobile-First&quot;</span>,{'\n'}
+                    {'    '}design: <span className="text-[#EC4899]">&quot;Modern, Clean &amp; Engaging&quot;</span>,{'\n'}
+                    {'    '}solution: <span className="text-[#38BDF8]">&quot;Clear Solutions That Get You Noticed&quot;</span>{'\n'}
                     {'  '}&#125;;{'\n'}
                     &#125;;
                   </code>

@@ -270,11 +270,12 @@ export const Contact: React.FC = () => {
                         className="form-select"
                       >
                         <option value="Business Website">Business Website</option>
+                        <option value="Portfolio Website">Portfolio Website</option>
                         <option value="Landing Page">Landing Page</option>
-                        <option value="Personal Portfolio">Personal Portfolio</option>
-                        <option value="Restaurant Website">Restaurant Website</option>
-                        <option value="Web Application / Portal">Web Application / Portal</option>
-                        <option value="Website Deployment / Redesign">Website Deployment / Redesign</option>
+                        <option value="School / Organization Website">School / Organization Website</option>
+                        <option value="E-commerce Website">E-commerce Website</option>
+                        <option value="Website Redesign">Website Redesign</option>
+                        <option value="Deployment & Setup">Deployment & Setup</option>
                         <option value="Custom Project">Custom Project</option>
                       </select>
                     </div>

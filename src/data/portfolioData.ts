@@ -5,16 +5,16 @@ export const personalInfo = {
   preferredName: "Clarity",
   brandName: "Clarity Creative",
   logoTag: "C²",
-  supportingTitle: "Web Developer • Digital Creative",
-  headline: "Building Modern Digital Experiences.",
+  supportingTitle: "WEB DEVELOPER • DIGITAL CREATIVE",
+  headline: "BUILDING MODERN WEBSITES THAT GET YOU NOTICED.",
   tagline: "Modern Websites. Clear Solutions.",
-  role: "Computer Science Student & Aspiring Web Developer",
+  role: "Web Developer & Digital Creative",
   status: "Available for new projects",
   bioHeadline: "Modern Websites. Clear Solutions.",
-  shortDescription: "I build fast, responsive and user-friendly websites that help businesses, organizations and individuals establish a strong online presence.",
+  shortDescription: "I design and develop fast, responsive and user-friendly websites for businesses, organizations and individuals.",
   email: "fatiufaruk7@gmail.com",
   location: "Available Worldwide / Remote",
-  experience: "Computer Science & Modern Web Development",
+  experience: "Modern Web Development & Digital Solutions",
   socials: {
     github: "https://github.com",
     twitter: "https://x.com/Toriblackm8j9",
@@ -25,111 +25,113 @@ export const personalInfo = {
 
 export const codeSnippetString = `const developer = {
   brand: "Clarity Creative",
-  role: "Web Developer & CS Student",
+  role: "Web Developer • Digital Creative",
   tagline: "Modern Websites. Clear Solutions.",
-  stack: ["HTML5", "CSS3", "JavaScript", "React", "Git", "GitHub"],
+  stack: ["HTML", "CSS", "JavaScript", "React", "Git", "GitHub"],
   status: "Available for projects"
 };
 
-function craftDigitalExperience(project) {
+function craftWebsite(project) {
   return {
-    speed: "Blazing Fast & Optimized",
-    design: "Clean, Responsive & Intuitive",
-    solution: "Clear Solutions for Real Growth"
+    performance: "Fast, Responsive & Mobile-First",
+    design: "Modern, Clean & Engaging",
+    solution: "Clear Solutions That Get You Noticed"
   };
 };`;
 
 export const servicesData: ServiceItem[] = [
   {
-    id: "web-development",
-    title: "Web Development",
-    description: "Build modern, responsive websites using clean, maintainable and performant code.",
-    iconName: "Code"
-  },
-  {
-    id: "responsive-web-design",
-    title: "Responsive Web Design",
-    description: "Create websites that look and work properly on phones, tablets, laptops and desktops.",
-    iconName: "Smartphone"
-  },
-  {
     id: "business-websites",
-    title: "Business Websites",
-    description: "Professional websites designed for businesses and organizations to build credibility and trust.",
+    title: "BUSINESS WEBSITES",
+    description: "Professional websites that help businesses establish a strong online presence.",
     iconName: "Briefcase"
   },
   {
+    id: "portfolio-websites",
+    title: "PORTFOLIO WEBSITES",
+    description: "Modern personal portfolios for developers, creatives, students and professionals.",
+    iconName: "User"
+  },
+  {
     id: "landing-pages",
-    title: "Landing Pages",
-    description: "High-converting modern landing pages designed to present your product, service or campaign clearly.",
+    title: "LANDING PAGES",
+    description: "High-quality landing pages designed to clearly present products, services or campaigns.",
     iconName: "Target"
   },
   {
-    id: "website-deployment",
-    title: "Website Deployment",
-    description: "Deploy websites and make them accessible, fast and reliable online using Vercel, Firebase & modern hosts.",
-    iconName: "Rocket"
+    id: "school-organization-websites",
+    title: "SCHOOL & ORGANIZATION WEBSITES",
+    description: "Structured websites for schools, organizations and institutions.",
+    iconName: "GraduationCap"
   },
   {
-    id: "digital-solutions",
-    title: "Digital Solutions",
-    description: "Build practical, tailored digital experiences and workflows based on your unique goals.",
-    iconName: "Layers"
+    id: "ecommerce-websites",
+    title: "E-COMMERCE WEBSITES",
+    description: "Modern online stores and product-focused web experiences.",
+    iconName: "ShoppingBag"
+  },
+  {
+    id: "website-redesign",
+    title: "WEBSITE REDESIGN",
+    description: "Modernize outdated websites with better design, responsiveness and user experience.",
+    iconName: "RefreshCw"
+  },
+  {
+    id: "deployment-setup",
+    title: "DEPLOYMENT & SETUP",
+    description: "Website deployment and configuration using modern hosting platforms.",
+    iconName: "Rocket"
   }
 ];
 
 export const pricingPackagesData: PricingPackage[] = [
   {
     id: "starter",
-    name: "Starter",
+    name: "STARTER",
     price: "From ₦30,000",
-    bestFor: "For simple personal or small business websites.",
+    bestFor: "For simple personal websites and landing pages.",
     features: [
-      "Responsive mobile-first design",
-      "Up to 3–5 clean pages/sections",
-      "Contact section & inquiry forms",
-      "Basic SEO & meta configuration",
-      "Fast deployment & launch setup",
-      "Cross-browser compatibility"
+      "Responsive mobile-first layout",
+      "Clean, modern single or multi-page structure",
+      "Contact section & inquiry messaging",
+      "Cross-browser performance optimization",
+      "Fast deployment setup on modern hosting"
     ],
-    ctaText: "Choose Starter",
+    ctaText: "GET A QUOTE",
     budgetRange: "₦30k – ₦50k"
   },
   {
-    id: "professional",
-    name: "Professional",
+    id: "business",
+    name: "BUSINESS",
     price: "From ₦50,000",
     badge: "Recommended",
     popular: true,
-    bestFor: "For businesses that need a stronger online presence.",
+    bestFor: "For businesses, organizations and professional websites.",
     features: [
-      "Custom responsive design & modern UI",
-      "Multiple pages with tailored content",
-      "Contact form & WhatsApp integration",
-      "Basic SEO & social share cards",
-      "Performance optimization & fast load",
-      "Website deployment on custom domain",
-      "PWA installable app support"
+      "Custom responsive design & brand presentation",
+      "Multi-page architecture with clear navigation",
+      "Contact form & direct messaging integration",
+      "Mobile-optimized performance & clean SEO setup",
+      "Domain setup & production deployment",
+      "User-friendly layout across all devices"
     ],
-    ctaText: "Start Professional",
+    ctaText: "GET A QUOTE",
     budgetRange: "₦50k – ₦80k"
   },
   {
     id: "custom",
-    name: "Custom",
+    name: "CUSTOM",
     price: "From ₦80,000",
-    bestFor: "For larger or specialized digital projects.",
+    bestFor: "For advanced websites, web applications and unique requirements.",
     features: [
-      "Fully customized UI/UX design",
-      "Advanced interactive functionality",
+      "Tailored UI design & custom workflows",
+      "Interactive features, catalogs or portals",
       "Database / backend integration where required",
-      "Custom forms, portals or product flows",
-      "Advanced SEO & analytics setup",
-      "Deployment & continuous integration",
-      "Priority post-launch support"
+      "Advanced responsive layouts & animations",
+      "Deployment, hosting setup & ongoing guidance"
     ],
-    ctaText: "Discuss Custom",
-    budgetRange: "₦80k – ₦100k"
+    ctaText: "GET A QUOTE",
+    budgetRange: "₦80k+"
   }
 ];
 
@@ -247,10 +249,8 @@ export const marqueeTechList = [
   { name: "React", symbol: "REACT" },
   { name: "Git", symbol: "GIT" },
   { name: "GitHub", symbol: "GITHUB" },
-  { name: "Vercel", symbol: "VERCEL" },
   { name: "Firebase", symbol: "FIREBASE" },
-  { name: "Tailwind CSS", symbol: "TAILWIND" },
-  { name: "TypeScript", symbol: "TS" }
+  { name: "Vercel", symbol: "VERCEL" }
 ];
 
 export const projectsData: ProjectItem[] = [

@@ -21,10 +21,10 @@ export const About: React.FC = () => {
   };
 
   const keyPillars = [
-    "Computer Science student & aspiring Web Developer",
-    "Clean, semantic & maintainable code practices",
-    "Fluid responsive design across mobile and desktop",
-    "Focused on problem solving & clear digital solutions"
+    "Fast, responsive websites that look great on any screen",
+    "Clean, modern design tailored to your brand identity",
+    "Reliable frontend development with React, HTML5 & CSS3",
+    "Clear communication, transparent timelines & reliable delivery"
   ];
 
   return (
@@ -37,23 +37,23 @@ export const About: React.FC = () => {
               ABOUT <span>CLARITY CREATIVE</span>
             </h2>
             <p className="section-subtitle-text">
-              Turning creative ideas into fast, intuitive, and modern web solutions.
+              Passionate about building modern, responsive, and user-friendly websites.
             </p>
           </div>
         </ScrollReveal>
 
         <div className="about-grid">
-          {/* Left: Biography and Philosophy */}
+          {/* Left: Client-focused Biography and Philosophy */}
           <ScrollReveal direction="up" delay={150} distance={24} className="h-full">
             <div className="about-content">
               <h3>
-                Passionate about building modern, responsive and user-friendly websites.
+                Helping businesses, organizations, and individuals establish a strong digital presence.
               </h3>
               <p>
-                I am a dedicated Computer Science student and aspiring Web Developer with a strong focus on frontend craft and practical digital solutions. My goal is to build web experiences that are not only visually impressive, but also lightning fast, accessible, and easy to navigate.
+                At Clarity Creative, every website is built with intention. I design and develop clean, fast, and responsive digital experiences that not only look modern, but also communicate clearly and drive real engagement.
               </p>
               <p>
-                Whether partnering with emerging brands, local businesses, or individual entrepreneurs, I approach each project with clear architecture, meticulous responsive design, and dependable modern technology like React, Vite, and Vercel.
+                Combining a rigorous Computer Science background with modern frontend tools, I create websites that load swiftly, work seamlessly on smartphones and desktops alike, and provide visitors with an intuitive, memorable journey.
               </p>
 
               <div className="space-y-3 mb-8">

@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           <a 
             href="#home" 
             onClick={(e) => handleNavClick(e, 'home')}
-            className="logo group" 
+            className="logo logo-hero-anim group" 
             aria-label="Clarity Creative Homepage"
           >
             <span className="logo-badge logo-badge-animated group-hover:scale-105 transition-all duration-300" aria-hidden="true">

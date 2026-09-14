@@ -23,10 +23,10 @@ export const Pricing: React.FC = () => {
           <div className="section-title">
             <p>TRANSPARENT VALUE</p>
             <h2>
-              SIMPLE, FLEXIBLE <span>PRICING</span>
+              SIMPLE OPTIONS. <span>CUSTOM SOLUTIONS.</span>
             </h2>
             <p className="section-subtitle-text">
-              Clear rates with zero hidden charges. Choose a tailored package or discuss custom digital requirements.
+              Clear rates with zero hidden surprises. Choose an option below or request a custom quote for your specific needs.
             </p>
           </div>
         </ScrollReveal>

@@ -10,12 +10,14 @@ import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
 import { TechMarquee } from './components/TechMarquee.tsx';
 import { About } from './components/About.tsx';
+import { WhyChooseUs } from './components/WhyChooseUs.tsx';
 import { Services } from './components/Services.tsx';
 import { Skills } from './components/Skills.tsx';
 import { Projects } from './components/Projects.tsx';
 import { Pricing } from './components/Pricing.tsx';
 import { Process } from './components/Process.tsx';
 import { Contact } from './components/Contact.tsx';
+import { SectionCTABlock } from './components/SectionCTABlock.tsx';
 import { Footer } from './components/Footer.tsx';
 import { PWAInstallBanner } from './components/PWAInstallBanner.tsx';
 import { OfflineIndicator } from './components/OfflineIndicator.tsx';
@@ -81,11 +83,26 @@ export default function App() {
         <Hero />
         <TechMarquee />
         <About />
+        <WhyChooseUs />
         <Services />
+        <SectionCTABlock
+          badge="HAVE AN IDEA?"
+          title="Ready to turn your idea into a fast, modern website?"
+          description="Let's build a clear, custom solution that gives your business or brand the attention it deserves."
+          buttonText="START A PROJECT"
+          variant="subtle"
+        />
         <Skills />
         <Projects />
         <Pricing />
         <Process />
+        <SectionCTABlock
+          badge="COLLABORATION READY"
+          title="Need a transparent, reliable web developer for your next launch?"
+          description="Direct communication, clear milestones, and modern execution from day one."
+          buttonText="GET A QUOTE"
+          variant="glow"
+        />
         <Contact />
       </main>
 
