@@ -95,7 +95,7 @@ export const Projects: React.FC = () => {
               >
                 {/* Thumbnail / Visual Header */}
                 <div 
-                  className="project-thumb cursor-pointer overflow-hidden relative"
+                  className="project-thumb cursor-pointer overflow-hidden relative group/thumb"
                   style={{ background: project.previewGradient }}
                   onClick={() => setSelectedProject(project)}
                   role="button"
@@ -108,11 +108,24 @@ export const Projects: React.FC = () => {
                   }}
                   aria-label={`Open case study for ${project.title}`}
                 >
-                  <span className="project-thumb-badge">
+                  {project.imageUrl && (
+                    <img
+                      src={project.imageUrl}
+                      alt={`${project.title} interface preview`}
+                      referrerPolicy="no-referrer"
+                      className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
+                      loading="lazy"
+                    />
+                  )}
+
+                  {/* Gradient overlay for high legibility and cohesive Midnight Teal tone */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D1C1F] via-[#0D1C1F]/45 to-black/25 transition-opacity duration-300 group-hover:opacity-80" />
+
+                  <span className="project-thumb-badge relative z-10 backdrop-blur-md bg-[#061012]/80 border border-[#193438] text-[#16C7C2]">
                     {project.projectType}
                   </span>
 
-                  <div className="project-thumb-icon transform group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(22,199,194,0.4)] transition-all duration-300">
+                  <div className="project-thumb-icon relative z-10 transform group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(22,199,194,0.5)] transition-all duration-300">
                     {getProjectIcon(project.id)}
                   </div>
                 </div>
@@ -224,27 +237,37 @@ export const Projects: React.FC = () => {
           >
             {/* Modal Header */}
             <div 
-              className="h-36 sm:h-40 flex items-center justify-center relative border-b border-[#193438] shrink-0"
+              className="h-40 sm:h-52 flex items-center justify-center relative border-b border-[#193438] shrink-0 overflow-hidden"
               style={{ background: selectedProject.previewGradient }}
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#0A1719]/90 border border-[#193438] flex items-center justify-center shadow-xl">
+              {selectedProject.imageUrl && (
+                <img
+                  src={selectedProject.imageUrl}
+                  alt={`${selectedProject.title} project preview`}
+                  referrerPolicy="no-referrer"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D1C1F] via-[#0D1C1F]/60 to-black/30" />
+
+              <div className="relative z-10 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#0A1719]/90 border border-[#16C7C2]/40 flex items-center justify-center shadow-xl backdrop-blur-md">
                 {getProjectIcon(selectedProject.id)}
               </div>
 
               <button
                 type="button"
                 onClick={closeModal}
-                className="absolute top-3 right-3 sm:top-4 sm:right-4 w-9 h-9 rounded-full bg-[#0A1719]/90 border border-[#193438] flex items-center justify-center text-[#8FA5A5] hover:text-[#F4FFFF] transition-colors cursor-pointer z-10"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 w-9 h-9 rounded-full bg-[#0A1719]/90 border border-[#193438] hover:border-[#16C7C2] flex items-center justify-center text-[#8FA5A5] hover:text-[#F4FFFF] transition-colors cursor-pointer z-20 backdrop-blur-md"
                 aria-label="Close modal"
               >
                 <X className="w-4 h-4" />
               </button>
 
-              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 right-14 flex items-center gap-1.5 flex-wrap">
-                <span className="text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded bg-[#0A1719]/90 border border-[#193438] text-[#16C7C2] whitespace-nowrap">
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 right-14 flex items-center gap-1.5 flex-wrap z-10">
+                <span className="text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#0A1719]/90 border border-[#16C7C2]/40 text-[#16C7C2] whitespace-nowrap shadow-sm backdrop-blur-md">
                   {selectedProject.projectType}
                 </span>
-                <span className="text-[10px] sm:text-[11px] font-medium px-2 py-0.5 rounded bg-[#0A1719]/80 border border-[#193438] text-[#8FA5A5] whitespace-nowrap">
+                <span className="text-[10px] sm:text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-[#0A1719]/90 border border-[#193438] text-[#8FA5A5] whitespace-nowrap backdrop-blur-md">
                   {selectedProject.category}
                 </span>
               </div>
@@ -291,6 +314,33 @@ export const Projects: React.FC = () => {
                   <span>View Code</span>
                 </a>
               </div>
+
+              {/* Full-width Realistic Interface Mockup Screen */}
+              {selectedProject.imageUrl && (
+                <div className="rounded-xl overflow-hidden border border-[#193438] bg-[#061012] shadow-lg">
+                  <div className="px-3.5 py-2 bg-[#0A1719] border-b border-[#193438] flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#EF4444]" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B]" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#10B981]" />
+                    </div>
+                    <span className="text-[11px] font-mono text-[#8FA5A5] truncate max-w-[200px]">
+                      preview.{selectedProject.id}.claritycreative.dev
+                    </span>
+                    <span className="text-[10px] font-mono text-[#16C7C2] px-1.5 py-0.5 rounded bg-[#16C7C2]/10 border border-[#16C7C2]/20">
+                      LIVE
+                    </span>
+                  </div>
+                  <div className="relative aspect-video overflow-hidden">
+                    <img 
+                      src={selectedProject.imageUrl} 
+                      alt={`${selectedProject.title} full interface`}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                </div>
+              )}
 
               {selectedProject.objective && (
                 <div className="p-4 rounded-xl bg-[#0A1719] border border-[#193438]">

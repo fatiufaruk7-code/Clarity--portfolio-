@@ -1,6 +1,6 @@
 import React from 'react';
-import { Code2, GraduationCap, Palette, Lightbulb, CheckCircle2, ArrowRight } from 'lucide-react';
-import { aboutCards } from '../data/portfolioData.ts';
+import { Code2, GraduationCap, Palette, Lightbulb, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+import { aboutCards, aboutWorkspaceImage } from '../data/portfolioData.ts';
 import { scrollToSection } from '../utils/navigation.ts';
 import { ScrollReveal } from './ScrollReveal.tsx';
 
@@ -42,7 +42,7 @@ export const About: React.FC = () => {
           </div>
         </ScrollReveal>
 
-        <div className="about-grid">
+        <div className="about-grid items-start">
           {/* Left: Client-focused Biography and Philosophy */}
           <ScrollReveal direction="up" delay={150} distance={24} className="h-full">
             <div className="about-content">
@@ -79,24 +79,59 @@ export const About: React.FC = () => {
             </div>
           </ScrollReveal>
 
-          {/* Right: Core Competencies Grid with Staggered Reveal */}
-          <div className="about-cards-grid">
-            {aboutCards.map((card, index) => (
-              <ScrollReveal 
-                key={index} 
-                direction="up" 
-                delay={180 + index * 100} 
-                distance={24}
-              >
-                <div className="about-card group" id={`about-card-${index}`}>
-                  <div className="about-card-icon group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(22,199,194,0.4)] transition-all duration-300">
-                    {getIcon(card.icon)}
+          {/* Right: Studio Workspace Image Showcase & Core Competencies Grid */}
+          <div className="space-y-6">
+            <ScrollReveal direction="up" delay={160} distance={24}>
+              <div className="relative rounded-2xl overflow-hidden border border-[#193438] group bg-[#0D1C1F] shadow-xl hover:border-[#16C7C2]/50 transition-all duration-300">
+                <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden">
+                  <img
+                    src={aboutWorkspaceImage}
+                    alt="Clarity Creative development studio workspace"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1719] via-[#0A1719]/40 to-transparent" />
+                  
+                  {/* Top Badge */}
+                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 flex items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold px-3 py-1 rounded-full bg-[#0A1719]/90 border border-[#16C7C2]/40 text-[#16C7C2] shadow-sm backdrop-blur-md">
+                      <Sparkles className="w-3.5 h-3.5 text-[#16C7C2]" />
+                      CREATIVE STUDIO
+                    </span>
                   </div>
-                  <h4>{card.title}</h4>
-                  <p>{card.description}</p>
+
+                  {/* Bottom Text Overlay */}
+                  <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 right-3 sm:right-4 z-10">
+                    <p className="text-xs sm:text-sm font-bold text-[#F4FFFF]">
+                      Where clean architecture meets purposeful visual design.
+                    </p>
+                    <p className="text-[11px] text-[#8FA5A5] mt-0.5">
+                      Fast, responsive & custom-engineered solutions for clients worldwide.
+                    </p>
+                  </div>
                 </div>
-              </ScrollReveal>
-            ))}
+              </div>
+            </ScrollReveal>
+
+            {/* Core Competencies Grid with Staggered Reveal */}
+            <div className="about-cards-grid">
+              {aboutCards.map((card, index) => (
+                <ScrollReveal 
+                  key={index} 
+                  direction="up" 
+                  delay={200 + index * 80} 
+                  distance={20}
+                >
+                  <div className="about-card group" id={`about-card-${index}`}>
+                    <div className="about-card-icon group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(22,199,194,0.4)] transition-all duration-300">
+                      {getIcon(card.icon)}
+                    </div>
+                    <h4>{card.title}</h4>
+                    <p>{card.description}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </div>
       </div>

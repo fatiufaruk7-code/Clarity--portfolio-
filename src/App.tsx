@@ -64,17 +64,19 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen selection:bg-[#16C7C2]/30 selection:text-[#F4FFFF] overflow-hidden bg-[#061012]">
+    <div className="relative min-h-screen selection:bg-[#16C7C2]/30 selection:text-[#F4FFFF] overflow-x-hidden bg-[#061012] w-full max-w-full">
       {/* Custom Sleek Cursor for desktop pointer devices */}
       <CustomCursor />
 
       {/* Fullscreen Initial Preloader */}
       {loading && <Preloader onComplete={() => setLoading(false)} />}
 
-      {/* Modern Ambient Mesh Gradients */}
-      <div className="mesh-1" aria-hidden="true" />
-      <div className="mesh-2" aria-hidden="true" />
-      <div className="mesh-3" aria-hidden="true" />
+      {/* Modern Ambient Mesh Gradients strictly bounded */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+        <div className="mesh-1" />
+        <div className="mesh-2" />
+        <div className="mesh-3" />
+      </div>
 
       <OfflineIndicator />
       <Navbar activeSection={activeSection} />

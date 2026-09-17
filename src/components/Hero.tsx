@@ -34,23 +34,23 @@ export const Hero: React.FC = () => {
               id="hero-badge"
               style={{ animationDelay: '180ms' }}
             >
-              <span className="status-dot" />
-              <span>{personalInfo.supportingTitle}</span>
+              <span className="status-dot shrink-0" />
+              <span className="break-words leading-tight">{personalInfo.supportingTitle}</span>
             </div>
 
             {/* Main Headline with Smooth Line Reveal */}
             <h1 className="hero-title">
-              <span className="block overflow-hidden pb-1">
+              <span className="block pb-1">
                 <span 
-                  className="block hero-anim-line"
+                  className="hero-anim-item inline-block max-w-full"
                   style={{ animationDelay: '320ms' }}
                 >
                   BUILDING MODERN WEBSITES
                 </span>
               </span>
-              <span className="block overflow-hidden pb-1">
+              <span className="block pb-1">
                 <span 
-                  className="block hero-anim-line bg-gradient-to-r from-[#8B5CF6] via-[#60A5FA] to-[#EC4899] bg-clip-text text-transparent"
+                  className="hero-anim-item inline-block max-w-full bg-gradient-to-r from-[#16C7C2] via-[#62E7E1] to-[#16C7C2] bg-clip-text text-transparent"
                   style={{ animationDelay: '460ms' }}
                 >
                   THAT GET YOU NOTICED.
@@ -59,7 +59,7 @@ export const Hero: React.FC = () => {
             </h1>
 
             {/* Supporting Tagline / Subtitle */}
-            <div className="overflow-hidden">
+            <div className="max-w-full">
               <p 
                 className="hero-subtitle hero-anim-item"
                 style={{ animationDelay: '600ms' }}
@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
                 style={{ animationDelay: '840ms' }}
               >
                 <span>VIEW MY WORK</span>
-                <ExternalLink className="w-4 h-4 text-[#8B5CF6] transition-transform group-hover:translate-x-0.5" />
+                <ExternalLink className="w-4 h-4 text-[#16C7C2] transition-transform group-hover:translate-x-0.5" />
               </a>
             </div>
 
@@ -107,20 +107,22 @@ export const Hero: React.FC = () => {
               >
                 CORE STACK:
               </span>
-              {techBadges.map((tech, index) => (
-                <span 
-                  key={tech} 
-                  className="hero-tech-pill hero-anim-badge"
-                  style={{ animationDelay: `${1020 + index * 70}ms` }}
-                >
-                  {tech}
-                </span>
-              ))}
+              <div className="hero-tech-list">
+                {techBadges.map((tech, index) => (
+                  <span 
+                    key={tech} 
+                    className="hero-tech-pill hero-anim-badge"
+                    style={{ animationDelay: `${1020 + index * 70}ms` }}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Right Column: Hero Visual - Futuristic Code Terminal Card */}
-          <div className="hero-visual">
+          <div className="hero-visual w-full min-w-0 max-w-full overflow-hidden">
             <div 
               className="hero-card hero-anim-terminal" 
               id="hero-code-terminal"
@@ -136,7 +138,7 @@ export const Hero: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleCopyCode}
-                  className="p-1.5 rounded-md hover:bg-white/10 text-[#94A3B8] hover:text-white transition-colors cursor-pointer"
+                  className="p-1.5 rounded-md hover:bg-white/10 text-[#8FA5A5] hover:text-white transition-colors cursor-pointer"
                   title="Copy code snippet"
                   aria-label="Copy code snippet"
                 >
@@ -145,7 +147,7 @@ export const Hero: React.FC = () => {
               </div>
 
               <div className="code-area">
-                <pre className="text-xs sm:text-sm leading-relaxed overflow-x-auto text-[#F4FFFF]">
+                <pre className="text-xs sm:text-sm leading-relaxed overflow-x-auto text-[#F4FFFF] max-w-full">
                   <code>
                     <span className="syntax-p">const</span> <span className="syntax-b">developer</span> = &#123;{'\n'}
                     {'  '}brand: <span className="text-[#62E7E1]">&quot;Clarity Creative&quot;</span>,{'\n'}

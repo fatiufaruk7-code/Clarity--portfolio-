@@ -47,9 +47,9 @@ export const Process: React.FC = () => {
                 className="process-card group h-full flex flex-col justify-start hover:-translate-y-1.5 transition-all duration-300" 
                 id={`process-step-${step.number}`}
               >
-                <span className="process-num group-hover:text-[#A78BFA] transition-colors">{step.number}</span>
+                <span className="process-num group-hover:text-[#16C7C2] transition-colors">{step.number}</span>
 
-                <div className="process-icon-box group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(139,92,246,0.35)] transition-all duration-300">
+                <div className="process-icon-box group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(22,199,194,0.35)] transition-all duration-300">
                   {getStepIcon(step.number)}
                 </div>
 

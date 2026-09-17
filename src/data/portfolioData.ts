@@ -1,4 +1,11 @@
 import { AboutCard, ProcessStep, ProjectItem, SkillItem, ServiceItem, PricingPackage } from '../types.ts';
+import portfolioShowcaseImg from '../assets/images/portfolio_showcase_1789637108927.jpg';
+import restaurantPreviewImg from '../assets/images/restaurant_preview_1789637126477.jpg';
+import ecommercePreviewImg from '../assets/images/ecommerce_preview_1789637138484.jpg';
+import schoolPortalImg from '../assets/images/school_portal_1789637152278.jpg';
+import developerWorkspaceImg from '../assets/images/developer_workspace_1789637166930.jpg';
+
+export const aboutWorkspaceImage = developerWorkspaceImg;
 
 export const personalInfo = {
   name: "Clarity Creative",
@@ -266,6 +273,7 @@ export const projectsData: ProjectItem[] = [
     previewClass: "preview-one",
     previewGradient: "radial-gradient(circle, rgba(22, 199, 194, 0.35) 0%, rgba(6, 16, 18, 0.95) 80%)",
     previewIcon: "Code",
+    imageUrl: portfolioShowcaseImg,
     liveUrl: "#",
     githubUrl: "https://github.com",
     featured: true,
@@ -287,6 +295,7 @@ export const projectsData: ProjectItem[] = [
     previewClass: "preview-two",
     previewGradient: "radial-gradient(circle, rgba(98, 231, 225, 0.35) 0%, rgba(6, 16, 18, 0.95) 80%)",
     previewIcon: "Utensils",
+    imageUrl: restaurantPreviewImg,
     liveUrl: "#",
     githubUrl: "https://github.com",
     featured: true,
@@ -308,6 +317,7 @@ export const projectsData: ProjectItem[] = [
     previewClass: "preview-three",
     previewGradient: "radial-gradient(circle, rgba(22, 199, 194, 0.3) 0%, rgba(6, 16, 18, 0.95) 80%)",
     previewIcon: "ShoppingBag",
+    imageUrl: ecommercePreviewImg,
     liveUrl: "#",
     githubUrl: "https://github.com",
     featured: true,
@@ -329,6 +339,7 @@ export const projectsData: ProjectItem[] = [
     previewClass: "preview-four",
     previewGradient: "radial-gradient(circle, rgba(98, 231, 225, 0.3) 0%, rgba(6, 16, 18, 0.95) 80%)",
     previewIcon: "GraduationCap",
+    imageUrl: schoolPortalImg,
     liveUrl: "#",
     githubUrl: "https://github.com",
     featured: true,

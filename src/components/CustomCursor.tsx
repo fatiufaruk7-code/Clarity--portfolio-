@@ -85,7 +85,7 @@ export const CustomCursor: React.FC = () => {
       <div
         ref={dotRef}
         aria-hidden="true"
-        className={`fixed top-0 left-0 -ml-1 -mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-[#A78BFA] to-[#38BDF8] pointer-events-none z-[999999] transition-opacity duration-200 ${
+        className={`fixed top-0 left-0 -ml-1 -mt-1 w-2 h-2 rounded-full bg-gradient-to-r from-[#16C7C2] to-[#62E7E1] pointer-events-none z-[999999] transition-opacity duration-200 ${
           isVisible ? 'opacity-90' : 'opacity-0'
         }`}
         style={{ willChange: 'transform' }}
@@ -99,8 +99,8 @@ export const CustomCursor: React.FC = () => {
           isVisible ? 'opacity-100' : 'opacity-0'
         } ${
           isHovered
-            ? '-ml-5 -mt-5 w-10 h-10 rounded-full border border-[#8B5CF6]/60 bg-[#8B5CF6]/10 shadow-[0_0_15px_rgba(139,92,246,0.35)] scale-110'
-            : '-ml-3.5 -mt-3.5 w-7 h-7 rounded-full border border-[#38BDF8]/40 bg-transparent shadow-[0_0_8px_rgba(56,189,248,0.2)]'
+            ? '-ml-5 -mt-5 w-10 h-10 rounded-full border border-[#16C7C2]/70 bg-[#16C7C2]/15 shadow-[0_0_15px_rgba(22,199,194,0.4)] scale-110'
+            : '-ml-3.5 -mt-3.5 w-7 h-7 rounded-full border border-[#62E7E1]/50 bg-transparent shadow-[0_0_8px_rgba(98,231,225,0.25)]'
         }`}
         style={{ willChange: 'transform' }}
       />

@@ -20,6 +20,7 @@ export interface ProjectItem {
   previewClass: string;
   previewGradient: string;
   previewIcon: string;
+  imageUrl?: string;
   liveUrl: string;
   githubUrl: string;
   featured: boolean;
