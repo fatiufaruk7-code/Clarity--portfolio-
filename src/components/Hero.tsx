@@ -145,20 +145,20 @@ export const Hero: React.FC = () => {
               </div>
 
               <div className="code-area">
-                <pre className="text-xs sm:text-sm leading-relaxed overflow-x-auto text-[#E2E8F0]">
+                <pre className="text-xs sm:text-sm leading-relaxed overflow-x-auto text-[#F4FFFF]">
                   <code>
                     <span className="syntax-p">const</span> <span className="syntax-b">developer</span> = &#123;{'\n'}
-                    {'  '}brand: <span className="text-[#38BDF8]">&quot;Clarity Creative&quot;</span>,{'\n'}
-                    {'  '}role: <span className="text-[#38BDF8]">&quot;Web Developer • Digital Creative&quot;</span>,{'\n'}
-                    {'  '}tagline: <span className="text-[#38BDF8]">&quot;Modern Websites. Clear Solutions.&quot;</span>,{'\n'}
-                    {'  '}stack: [<span className="text-[#A78BFA]">&quot;HTML&quot;</span>, <span className="text-[#A78BFA]">&quot;CSS&quot;</span>, <span className="text-[#A78BFA]">&quot;JavaScript&quot;</span>, <span className="text-[#A78BFA]">&quot;React&quot;</span>, <span className="text-[#A78BFA]">&quot;Git&quot;</span>, <span className="text-[#A78BFA]">&quot;GitHub&quot;</span>],{'\n'}
-                    {'  '}status: <span className="text-[#10B981]">&quot;Available for projects&quot;</span>{'\n'}
+                    {'  '}brand: <span className="text-[#62E7E1]">&quot;Clarity Creative&quot;</span>,{'\n'}
+                    {'  '}role: <span className="text-[#62E7E1]">&quot;Web Developer • Digital Creative&quot;</span>,{'\n'}
+                    {'  '}tagline: <span className="text-[#62E7E1]">&quot;Modern Websites. Clear Solutions.&quot;</span>,{'\n'}
+                    {'  '}stack: [<span className="text-[#16C7C2]">&quot;HTML&quot;</span>, <span className="text-[#16C7C2]">&quot;CSS&quot;</span>, <span className="text-[#16C7C2]">&quot;JavaScript&quot;</span>, <span className="text-[#16C7C2]">&quot;React&quot;</span>, <span className="text-[#16C7C2]">&quot;Git&quot;</span>, <span className="text-[#16C7C2]">&quot;GitHub&quot;</span>],{'\n'}
+                    {'  '}status: <span className="text-[#16C7C2]">&quot;Available for projects&quot;</span>{'\n'}
                     &#125;;{'\n\n'}
                     <span className="syntax-p">function</span> <span className="syntax-y">craftWebsite</span>(project) &#123;{'\n'}
                     {'  '}<span className="syntax-p">return</span> &#123;{'\n'}
-                    {'    '}performance: <span className="text-[#38BDF8]">&quot;Fast, Responsive &amp; Mobile-First&quot;</span>,{'\n'}
-                    {'    '}design: <span className="text-[#EC4899]">&quot;Modern, Clean &amp; Engaging&quot;</span>,{'\n'}
-                    {'    '}solution: <span className="text-[#38BDF8]">&quot;Clear Solutions That Get You Noticed&quot;</span>{'\n'}
+                    {'    '}performance: <span className="text-[#62E7E1]">&quot;Fast, Responsive &amp; Mobile-First&quot;</span>,{'\n'}
+                    {'    '}design: <span className="text-[#16C7C2]">&quot;Modern, Clean &amp; Engaging&quot;</span>,{'\n'}
+                    {'    '}solution: <span className="text-[#62E7E1]">&quot;Clear Solutions That Get You Noticed&quot;</span>{'\n'}
                     {'  '}&#125;;{'\n'}
                     &#125;;
                   </code>
@@ -166,12 +166,12 @@ export const Hero: React.FC = () => {
               </div>
 
               {/* Terminal footer status */}
-              <div className="px-5 py-3 bg-[#0E1428] border-t border-[#1E293B] flex items-center justify-between text-[11px] text-[#94A3B8]">
+              <div className="px-5 py-3 bg-[#0A1719] border-t border-[#193438] flex items-center justify-between text-[11px] text-[#8FA5A5]">
                 <div className="flex items-center gap-2">
-                  <Terminal className="w-3.5 h-3.5 text-[#8B5CF6]" />
+                  <Terminal className="w-3.5 h-3.5 text-[#16C7C2]" />
                   <span>TypeScript 5.0 • Ready</span>
                 </div>
-                <div className="flex items-center gap-1.5 text-[#10B981]">
+                <div className="flex items-center gap-1.5 text-[#16C7C2]">
                   <Sparkles className="w-3 h-3" />
                   <span>All tests passing</span>
                 </div>

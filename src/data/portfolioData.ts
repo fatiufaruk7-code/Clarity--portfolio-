@@ -264,7 +264,7 @@ export const projectsData: ProjectItem[] = [
     overview: "A custom personal portfolio website designed from the ground up for Clarity Creative. Features a sleek dark glassmorphism interface, interactive project modals, responsive touch controls, and smooth entrance sequences.",
     objective: "To present web development skills, live client services, and transparent pricing in a polished, highly accessible digital showcase.",
     previewClass: "preview-one",
-    previewGradient: "radial-gradient(circle, rgba(139, 92, 246, 0.45) 0%, rgba(11, 16, 32, 0.9) 80%)",
+    previewGradient: "radial-gradient(circle, rgba(22, 199, 194, 0.35) 0%, rgba(6, 16, 18, 0.95) 80%)",
     previewIcon: "Code",
     liveUrl: "#",
     githubUrl: "https://github.com",
@@ -285,7 +285,7 @@ export const projectsData: ProjectItem[] = [
     overview: "A vibrant dining website crafted to help culinary businesses attract patrons online. Features categorized digital menus, chef specials, mobile booking forms, and clear location/contact integration.",
     objective: "To demonstrate responsive dining catalog layout, interactive mobile menus, and seamless client conversion journeys.",
     previewClass: "preview-two",
-    previewGradient: "radial-gradient(circle, rgba(59, 130, 246, 0.45) 0%, rgba(11, 16, 32, 0.9) 80%)",
+    previewGradient: "radial-gradient(circle, rgba(98, 231, 225, 0.35) 0%, rgba(6, 16, 18, 0.95) 80%)",
     previewIcon: "Utensils",
     liveUrl: "#",
     githubUrl: "https://github.com",
@@ -306,7 +306,7 @@ export const projectsData: ProjectItem[] = [
     overview: "Clarity Sell is an innovative concept for digital creators, merchants, and data providers to distribute products online. It features clean product previews, instant checkout calculations, and modern digital asset delivery.",
     objective: "To explore seamless digital asset distribution, cart state management, and intuitive checkout micro-interactions in modern web apps.",
     previewClass: "preview-three",
-    previewGradient: "radial-gradient(circle, rgba(236, 72, 153, 0.4) 0%, rgba(11, 16, 32, 0.9) 80%)",
+    previewGradient: "radial-gradient(circle, rgba(22, 199, 194, 0.3) 0%, rgba(6, 16, 18, 0.95) 80%)",
     previewIcon: "ShoppingBag",
     liveUrl: "#",
     githubUrl: "https://github.com",
@@ -314,7 +314,7 @@ export const projectsData: ProjectItem[] = [
     highlights: [
       "Streamlined digital checkout flow with live order summary",
       "Responsive product grids with instant search and filter controls",
-      "Clean glassmorphism card surfaces with subtle purple glow"
+      "Clean glassmorphism card surfaces with subtle teal glow"
     ]
   },
   {
@@ -327,7 +327,7 @@ export const projectsData: ProjectItem[] = [
     overview: "A student-centered educational portal interface designed for university and college workflows. Includes student result checking, semester course registration, announcement boards, and department resources.",
     objective: "To build an organized, accessible dashboard interface solving real student navigation challenges with clear visual hierarchy.",
     previewClass: "preview-four",
-    previewGradient: "radial-gradient(circle, rgba(99, 102, 241, 0.45) 0%, rgba(11, 16, 32, 0.9) 80%)",
+    previewGradient: "radial-gradient(circle, rgba(98, 231, 225, 0.3) 0%, rgba(6, 16, 18, 0.95) 80%)",
     previewIcon: "GraduationCap",
     liveUrl: "#",
     githubUrl: "https://github.com",

@@ -1,29 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F172A" />
-      <stop offset="50%" stop-color="#0B1020" />
-      <stop offset="100%" stop-color="#060913" />
+      <stop offset="0%" stop-color="#0D1C1F" />
+      <stop offset="50%" stop-color="#0A1719" />
+      <stop offset="100%" stop-color="#061012" />
     </linearGradient>
     <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.6" />
-      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.4" />
+      <stop offset="0%" stop-color="#16C7C2" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#62E7E1" stop-opacity="0.6" />
     </linearGradient>
     <radialGradient id="glow" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.3" />
-      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.1" />
-      <stop offset="100%" stop-color="#0B1020" stop-opacity="0" />
+      <stop offset="0%" stop-color="#16C7C2" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#62E7E1" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#061012" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="c1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="40%" stop-color="#A78BFA" />
-      <stop offset="100%" stop-color="#8B5CF6" />
+      <stop offset="40%" stop-color="#62E7E1" />
+      <stop offset="100%" stop-color="#16C7C2" />
     </linearGradient>
     <linearGradient id="c2Grad" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8" />
-      <stop offset="60%" stop-color="#60A5FA" />
-      <stop offset="100%" stop-color="#EC4899" />
+      <stop offset="0%" stop-color="#62E7E1" />
+      <stop offset="60%" stop-color="#16C7C2" />
+      <stop offset="100%" stop-color="#0F9F9A" />
     </linearGradient>
     <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
       <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.8"/>
@@ -61,7 +60,7 @@
     />
 
     <!-- Precision Glowing Geometric Dot -->
-    <circle cx="376" cy="142" r="14" fill="#38BDF8" />
-    <circle cx="376" cy="142" r="24" fill="#38BDF8" opacity="0.25" />
+    <circle cx="376" cy="142" r="14" fill="#62E7E1" />
+    <circle cx="376" cy="142" r="24" fill="#62E7E1" opacity="0.25" />
   </g>
 </svg>

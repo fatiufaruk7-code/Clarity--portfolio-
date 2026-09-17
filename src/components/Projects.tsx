@@ -52,15 +52,15 @@ export const Projects: React.FC = () => {
   const getProjectIcon = (id: string) => {
     switch (id) {
       case 'portfolio-website':
-        return <Code className="w-6 h-6 text-[#A78BFA]" />;
+        return <Code className="w-6 h-6 text-[#16C7C2]" />;
       case 'restaurant-website':
-        return <Utensils className="w-6 h-6 text-[#60A5FA]" />;
+        return <Utensils className="w-6 h-6 text-[#62E7E1]" />;
       case 'clarity-sell':
-        return <ShoppingBag className="w-6 h-6 text-[#F472B6]" />;
+        return <ShoppingBag className="w-6 h-6 text-[#16C7C2]" />;
       case 'school-portal':
-        return <GraduationCap className="w-6 h-6 text-[#818CF8]" />;
+        return <GraduationCap className="w-6 h-6 text-[#62E7E1]" />;
       default:
-        return <Layers className="w-6 h-6 text-[#A78BFA]" />;
+        return <Layers className="w-6 h-6 text-[#16C7C2]" />;
     }
   };
 
@@ -90,7 +90,7 @@ export const Projects: React.FC = () => {
               className="h-full"
             >
               <article
-                className="project-card group h-full flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(139,92,246,0.3)]"
+                className="project-card group h-full flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(22,199,194,0.3)]"
                 id={`project-${project.id}`}
               >
                 {/* Thumbnail / Visual Header */}
@@ -112,7 +112,7 @@ export const Projects: React.FC = () => {
                     {project.projectType}
                   </span>
 
-                  <div className="project-thumb-icon transform group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(139,92,246,0.4)] transition-all duration-300">
+                  <div className="project-thumb-icon transform group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(22,199,194,0.4)] transition-all duration-300">
                     {getProjectIcon(project.id)}
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export const Projects: React.FC = () => {
                       ))}
                     </div>
 
-                    <h3 className="project-title group-hover:text-[#A78BFA] transition-colors">
+                    <h3 className="project-title group-hover:text-[#62E7E1] transition-colors">
                       {project.title}
                     </h3>
 
@@ -139,8 +139,8 @@ export const Projects: React.FC = () => {
                     {/* Highlights */}
                     <div className="space-y-1.5 mb-5">
                       {project.highlights.slice(0, 2).map((item, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-xs text-[#E2E8F0]">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#8B5CF6] flex-shrink-0" />
+                        <div key={idx} className="flex items-center gap-2 text-xs text-[#F4FFFF]">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#16C7C2] flex-shrink-0" />
                           <span className="line-clamp-1">{item}</span>
                         </div>
                       ))}
@@ -162,10 +162,10 @@ export const Projects: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setSelectedProject(project)}
-                        className="p-2 rounded-lg bg-[#0E1428] border border-[#1E293B] hover:border-[#8B5CF6]/50 text-[#94A3B8] hover:text-white transition-all hover:scale-105"
+                        className="p-2 rounded-lg bg-[#0A1719] border border-[#193438] hover:border-[#16C7C2]/50 text-[#8FA5A5] hover:text-[#F4FFFF] transition-all hover:scale-105"
                         title="Project Details"
                       >
-                        <Sparkles className="w-4 h-4 text-[#8B5CF6]" />
+                        <Sparkles className="w-4 h-4 text-[#16C7C2]" />
                       </button>
                     </div>
                   </div>
@@ -177,15 +177,15 @@ export const Projects: React.FC = () => {
 
         {/* Project Section Call-to-Action */}
         <ScrollReveal direction="up" delay={250} distance={20}>
-          <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#8B5CF6]/40 transition-colors flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl text-center sm:text-left">
+          <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-[#0D1C1F] border border-[#193438] hover:border-[#16C7C2]/40 transition-colors flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl text-center sm:text-left">
             <div>
-              <span className="text-xs font-mono uppercase tracking-wider text-[#8B5CF6] font-bold block mb-1">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#16C7C2] font-bold block mb-1">
                 READY TO LAUNCH?
               </span>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-white">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-[#F4FFFF]">
                 Need a modern website like these?
               </h3>
-              <p className="text-sm text-[#94A3B8] mt-1">
+              <p className="text-sm text-[#8FA5A5] mt-1">
                 Let&apos;s build a fast, responsive solution tailored to your goals.
               </p>
             </div>
@@ -217,34 +217,34 @@ export const Projects: React.FC = () => {
           aria-labelledby="modal-title"
         >
           <div
-            className={`relative w-full max-w-[calc(100vw-20px)] sm:max-w-2xl max-h-[92vh] flex flex-col rounded-2xl bg-[#111827] border border-[#1E293B] shadow-2xl overflow-hidden transition-all duration-200 ease-out ${
+            className={`relative w-full max-w-[calc(100vw-20px)] sm:max-w-2xl max-h-[92vh] flex flex-col rounded-2xl bg-[#0D1C1F] border border-[#193438] shadow-2xl overflow-hidden transition-all duration-200 ease-out ${
               isClosingModal ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
             }`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
             <div 
-              className="h-36 sm:h-40 flex items-center justify-center relative border-b border-[#1E293B] shrink-0"
+              className="h-36 sm:h-40 flex items-center justify-center relative border-b border-[#193438] shrink-0"
               style={{ background: selectedProject.previewGradient }}
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#0E1428]/90 border border-[#1E293B] flex items-center justify-center shadow-xl">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#0A1719]/90 border border-[#193438] flex items-center justify-center shadow-xl">
                 {getProjectIcon(selectedProject.id)}
               </div>
 
               <button
                 type="button"
                 onClick={closeModal}
-                className="absolute top-3 right-3 sm:top-4 sm:right-4 w-9 h-9 rounded-full bg-[#0E1428]/90 border border-[#1E293B] flex items-center justify-center text-[#94A3B8] hover:text-white transition-colors cursor-pointer z-10"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 w-9 h-9 rounded-full bg-[#0A1719]/90 border border-[#193438] flex items-center justify-center text-[#8FA5A5] hover:text-[#F4FFFF] transition-colors cursor-pointer z-10"
                 aria-label="Close modal"
               >
                 <X className="w-4 h-4" />
               </button>
 
               <div className="absolute top-3 left-3 sm:top-4 sm:left-4 right-14 flex items-center gap-1.5 flex-wrap">
-                <span className="text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded bg-[#0E1428]/90 border border-[#1E293B] text-[#A78BFA] whitespace-nowrap">
+                <span className="text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded bg-[#0A1719]/90 border border-[#193438] text-[#16C7C2] whitespace-nowrap">
                   {selectedProject.projectType}
                 </span>
-                <span className="text-[10px] sm:text-[11px] font-medium px-2 py-0.5 rounded bg-[#0E1428]/80 border border-[#1E293B] text-[#94A3B8] whitespace-nowrap">
+                <span className="text-[10px] sm:text-[11px] font-medium px-2 py-0.5 rounded bg-[#0A1719]/80 border border-[#193438] text-[#8FA5A5] whitespace-nowrap">
                   {selectedProject.category}
                 </span>
               </div>
@@ -253,10 +253,10 @@ export const Projects: React.FC = () => {
             {/* Modal Content */}
             <div className="p-4 sm:p-7 overflow-y-auto space-y-4 sm:space-y-5">
               <div>
-                <h3 id="modal-title" className="text-xl sm:text-2xl font-extrabold text-white mb-2">
+                <h3 id="modal-title" className="text-xl sm:text-2xl font-extrabold text-[#F4FFFF] mb-2">
                   {selectedProject.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#8FA5A5] leading-relaxed">
                   {selectedProject.overview || selectedProject.description}
                 </p>
               </div>
@@ -293,24 +293,24 @@ export const Projects: React.FC = () => {
               </div>
 
               {selectedProject.objective && (
-                <div className="p-4 rounded-xl bg-[#0E1428] border border-[#1E293B]">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#8B5CF6] mb-1.5">
+                <div className="p-4 rounded-xl bg-[#0A1719] border border-[#193438]">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#16C7C2] mb-1.5">
                     Project Objective
                   </h4>
-                  <p className="text-xs sm:text-sm text-[#E2E8F0] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#F4FFFF] leading-relaxed">
                     {selectedProject.objective}
                   </p>
                 </div>
               )}
 
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-2.5">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#F4FFFF] mb-2.5">
                   Key Technical Features
                 </h4>
                 <ul className="space-y-2">
                   {selectedProject.highlights.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#E2E8F0]">
-                      <CheckCircle2 className="w-4 h-4 text-[#8B5CF6] shrink-0 mt-0.5" />
+                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#F4FFFF]">
+                      <CheckCircle2 className="w-4 h-4 text-[#16C7C2] shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -318,12 +318,12 @@ export const Projects: React.FC = () => {
               </div>
 
               <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#F4FFFF] mb-2">
                   Technologies
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.tags.map((tag, idx) => (
-                    <span key={idx} className="text-xs font-mono px-2.5 py-1 rounded bg-[#0E1428] border border-[#1E293B] text-[#A78BFA]">
+                    <span key={idx} className="text-xs font-mono px-2.5 py-1 rounded bg-[#0A1719] border border-[#193438] text-[#62E7E1]">
                       {tag}
                     </span>
                   ))}
@@ -332,7 +332,7 @@ export const Projects: React.FC = () => {
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 sm:p-5 bg-[#0E1428] border-t border-[#1E293B] flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+            <div className="p-4 sm:p-5 bg-[#0A1719] border-t border-[#193438] flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
               <button
                 type="button"
                 onClick={() => {

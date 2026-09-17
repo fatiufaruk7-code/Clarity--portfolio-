@@ -28,7 +28,7 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <section className="section bg-[#080C18]" id="about">
+    <section className="section bg-[#0A1719]" id="about">
       <div className="container">
         <ScrollReveal direction="up" distance={20}>
           <div className="section-title">
@@ -58,8 +58,8 @@ export const About: React.FC = () => {
 
               <div className="space-y-3 mb-8">
                 {keyPillars.map((pillar, index) => (
-                  <div key={index} className="flex items-center gap-3 text-sm text-[#E2E8F0] transition-transform duration-200 hover:translate-x-1">
-                    <CheckCircle2 className="w-4 h-4 text-[#8B5CF6] flex-shrink-0" />
+                  <div key={index} className="flex items-center gap-3 text-sm text-[#F4FFFF] transition-transform duration-200 hover:translate-x-1">
+                    <CheckCircle2 className="w-4 h-4 text-[#16C7C2] flex-shrink-0" />
                     <span>{pillar}</span>
                   </div>
                 ))}
@@ -89,7 +89,7 @@ export const About: React.FC = () => {
                 distance={24}
               >
                 <div className="about-card group" id={`about-card-${index}`}>
-                  <div className="about-card-icon group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(139,92,246,0.4)] transition-all duration-300">
+                  <div className="about-card-icon group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(22,199,194,0.4)] transition-all duration-300">
                     {getIcon(card.icon)}
                   </div>
                   <h4>{card.title}</h4>

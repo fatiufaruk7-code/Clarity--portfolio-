@@ -17,7 +17,7 @@ export const Pricing: React.FC = () => {
   };
 
   return (
-    <section className="section bg-[#080C18]" id="pricing">
+    <section className="section bg-[#0A1719]" id="pricing">
       <div className="container">
         <ScrollReveal direction="up" distance={20}>
           <div className="section-title">
@@ -42,7 +42,7 @@ export const Pricing: React.FC = () => {
             >
               <div
                 className={`pricing-card group h-full flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300 ${
-                  pkg.popular ? 'featured-card relative shadow-[0_0_30px_rgba(139,92,246,0.25)]' : ''
+                  pkg.popular ? 'featured-card relative shadow-[0_0_30px_rgba(22,199,194,0.25)]' : ''
                 }`}
                 id={`pricing-${pkg.id}`}
               >
@@ -62,7 +62,7 @@ export const Pricing: React.FC = () => {
                   <ul className="pricing-features">
                     {pkg.features.map((feat, idx) => (
                       <li key={idx} className="pricing-feature">
-                        <Check className="feature-check w-4 h-4 text-[#8B5CF6] shrink-0" />
+                        <Check className="feature-check w-4 h-4 text-[#16C7C2] shrink-0" />
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -88,7 +88,7 @@ export const Pricing: React.FC = () => {
 
         {/* Note */}
         <ScrollReveal direction="up" delay={200} distance={15}>
-          <div className="mt-12 text-center text-xs text-[#94A3B8]">
+          <div className="mt-12 text-center text-xs text-[#8FA5A5]">
             <p>
               Have special requirements, complex API integrations or tight deadlines?{' '}
               <a 
@@ -97,7 +97,7 @@ export const Pricing: React.FC = () => {
                   e.preventDefault();
                   triggerContactWithContext('Custom Project', 'Hello, I have custom project requirements and would like to request a tailored quote.');
                 }}
-                className="text-[#A78BFA] hover:underline font-bold cursor-pointer"
+                className="text-[#16C7C2] hover:underline font-bold cursor-pointer"
               >
                 Contact me directly for a custom quote.
               </a>

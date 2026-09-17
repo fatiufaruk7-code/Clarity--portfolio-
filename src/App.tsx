@@ -64,7 +64,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen selection:bg-[#8B5CF6]/30 selection:text-white overflow-hidden bg-[#0B1020]">
+    <div className="relative min-h-screen selection:bg-[#16C7C2]/30 selection:text-[#F4FFFF] overflow-hidden bg-[#061012]">
       {/* Custom Sleek Cursor for desktop pointer devices */}
       <CustomCursor />
 

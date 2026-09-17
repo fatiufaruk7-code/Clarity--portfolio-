@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, 'contact')}
-              className="btn btn-primary !py-2.5 !px-5 !text-xs !rounded-full shadow-md shadow-[#8B5CF6]/30 whitespace-nowrap"
+              className="btn btn-primary !py-2.5 !px-5 !text-xs !rounded-full shadow-md shadow-[#16C7C2]/30 whitespace-nowrap"
               id="nav-cta-btn"
             >
               <span>START A PROJECT</span>
@@ -116,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             aria-expanded={mobileMenuOpen}
             aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 text-[#A78BFA]" /> : <Menu className="w-6 h-6 text-[#F8FAFC]" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 text-[#62E7E1]" /> : <Menu className="w-6 h-6 text-[#F4FFFF]" />}
           </button>
         </nav>
       </div>
@@ -124,7 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       {/* Mobile Slide-down Drawer */}
       {mobileMenuOpen && (
         <div 
-          className="lg:hidden border-b border-[#1E293B] bg-[#0E1428]/98 backdrop-blur-2xl px-5 py-5 sm:px-6 transition-all animate-in slide-in-from-top-4 duration-300 shadow-2xl max-h-[calc(100vh-70px)] overflow-y-auto"
+          className="lg:hidden border-b border-[#193438] bg-[#061012]/98 backdrop-blur-2xl px-5 py-5 sm:px-6 transition-all animate-in slide-in-from-top-4 duration-300 shadow-2xl max-h-[calc(100vh-70px)] overflow-y-auto"
           id="mobile-drawer"
         >
           <ul className="flex flex-col gap-2 mb-5">
@@ -139,20 +139,20 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                   onClick={(e) => handleMobileNavClick(e, item.id)}
                   className={`flex items-center justify-between py-3 px-3 rounded-lg text-base font-bold transition-all min-h-[44px] ${
                     activeSection === item.id
-                      ? 'text-[#A78BFA] bg-[#8B5CF6]/10 border-l-3 border-[#8B5CF6]'
-                      : 'text-[#94A3B8] hover:text-white hover:bg-white/5'
+                      ? 'text-[#62E7E1] bg-[#16C7C2]/10 border-l-3 border-[#16C7C2]'
+                      : 'text-[#8FA5A5] hover:text-[#F4FFFF] hover:bg-white/5'
                   }`}
                 >
                   <span>{item.label}</span>
                   {activeSection === item.id && (
-                    <span className="w-2 h-2 rounded-full bg-[#8B5CF6] shadow-[0_0_8px_#8B5CF6]" />
+                    <span className="w-2 h-2 rounded-full bg-[#16C7C2] shadow-[0_0_8px_#16C7C2]" />
                   )}
                 </a>
               </li>
             ))}
           </ul>
 
-          <div className="flex flex-col gap-2.5 pt-4 border-t border-[#1E293B]">
+          <div className="flex flex-col gap-2.5 pt-4 border-t border-[#193438]">
             <PWAInstallButton variant="mobile" />
 
             <a

@@ -18,21 +18,21 @@ export const Services: React.FC = () => {
   const getServiceIcon = (iconName: string) => {
     switch (iconName) {
       case 'Briefcase':
-        return <Briefcase className="w-6 h-6 text-[#A78BFA]" />;
+        return <Briefcase className="w-6 h-6 text-[#16C7C2]" />;
       case 'User':
-        return <User className="w-6 h-6 text-[#60A5FA]" />;
+        return <User className="w-6 h-6 text-[#62E7E1]" />;
       case 'Target':
-        return <Target className="w-6 h-6 text-[#EC4899]" />;
+        return <Target className="w-6 h-6 text-[#16C7C2]" />;
       case 'GraduationCap':
-        return <GraduationCap className="w-6 h-6 text-[#38BDF8]" />;
+        return <GraduationCap className="w-6 h-6 text-[#62E7E1]" />;
       case 'ShoppingBag':
-        return <ShoppingBag className="w-6 h-6 text-[#F59E0B]" />;
+        return <ShoppingBag className="w-6 h-6 text-[#16C7C2]" />;
       case 'RefreshCw':
-        return <RefreshCw className="w-6 h-6 text-[#10B981]" />;
+        return <RefreshCw className="w-6 h-6 text-[#62E7E1]" />;
       case 'Rocket':
-        return <Rocket className="w-6 h-6 text-[#8B5CF6]" />;
+        return <Rocket className="w-6 h-6 text-[#16C7C2]" />;
       default:
-        return <Code className="w-6 h-6 text-[#A78BFA]" />;
+        return <Code className="w-6 h-6 text-[#16C7C2]" />;
     }
   };
 
@@ -65,7 +65,7 @@ export const Services: React.FC = () => {
                 id={`service-${service.id}`}
               >
                 <div>
-                  <div className="service-icon-box group-hover:scale-108 group-hover:shadow-[0_0_20px_rgba(139,92,246,0.35)] transition-all duration-300">
+                  <div className="service-icon-box group-hover:scale-108 group-hover:shadow-[0_0_20px_rgba(22,199,194,0.35)] transition-all duration-300">
                     {getServiceIcon(service.iconName)}
                   </div>
 
@@ -76,11 +76,11 @@ export const Services: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => triggerContactWithContext(service.title, `Hi, I am interested in discussing a project for "${service.title}".`)}
-                  className="w-full mt-6 pt-4 border-t border-[#1E293B] flex items-center justify-between text-xs font-bold text-[#A78BFA] group-hover:text-white transition-colors cursor-pointer bg-transparent text-left"
+                  className="w-full mt-6 pt-4 border-t border-[#193438] flex items-center justify-between text-xs font-bold text-[#16C7C2] group-hover:text-[#F4FFFF] transition-colors cursor-pointer bg-transparent text-left"
                   aria-label={`Inquire about ${service.title}`}
                 >
                   <span>Inquire About This</span>
-                  <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200 text-[#8B5CF6] group-hover:text-[#38BDF8]" />
+                  <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200 text-[#16C7C2] group-hover:text-[#62E7E1]" />
                 </button>
               </div>
             </ScrollReveal>

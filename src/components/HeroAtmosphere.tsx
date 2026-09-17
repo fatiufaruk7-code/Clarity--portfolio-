@@ -7,7 +7,7 @@ export const HeroAtmosphere: React.FC = () => {
 
   useEffect(() => {
     // Generate particles once on client
-    const colors = ['#8B5CF6', '#3B82F6', '#38BDF8', '#EC4899'];
+    const colors = ['#16C7C2', '#62E7E1', '#0D9488', '#2DD4BF'];
     const p = Array.from({ length: 18 }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
@@ -63,19 +63,19 @@ export const HeroAtmosphere: React.FC = () => {
     >
       {/* Slow-moving gradient blobs with parallax */}
       <div 
-        className="absolute -top-16 sm:-top-32 -left-16 sm:-left-32 w-[320px] sm:w-[550px] h-[320px] sm:h-[550px] rounded-full bg-gradient-to-tr from-[#8B5CF6]/15 via-[#3B82F6]/10 to-transparent blur-[60px] sm:blur-[110px] will-change-transform animate-[blob-float-1_26s_ease-in-out_infinite]"
+        className="absolute -top-16 sm:-top-32 -left-16 sm:-left-32 w-[320px] sm:w-[550px] h-[320px] sm:h-[550px] rounded-full bg-gradient-to-tr from-[#16C7C2]/15 via-[#62E7E1]/08 to-transparent blur-[60px] sm:blur-[110px] will-change-transform animate-[blob-float-1_26s_ease-in-out_infinite]"
         style={{
           transform: `translate3d(${offset.x * 1.2}px, ${offset.y * 1.2}px, 0)`,
         }}
       />
       <div 
-        className="absolute top-1/4 -right-16 sm:-right-24 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-gradient-to-bl from-[#3B82F6]/12 via-[#8B5CF6]/8 to-transparent blur-[60px] sm:blur-[120px] will-change-transform animate-[blob-float-2_28s_ease-in-out_infinite]"
+        className="absolute top-1/4 -right-16 sm:-right-24 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bg-gradient-to-bl from-[#62E7E1]/12 via-[#16C7C2]/08 to-transparent blur-[60px] sm:blur-[120px] will-change-transform animate-[blob-float-2_28s_ease-in-out_infinite]"
         style={{
           transform: `translate3d(${-offset.x * 1.1}px, ${-offset.y * 1.1}px, 0)`,
         }}
       />
       <div 
-        className="absolute bottom-[-50px] sm:bottom-[-100px] left-1/4 sm:left-1/3 w-[280px] sm:w-[450px] h-[280px] sm:h-[450px] rounded-full bg-gradient-to-t from-[#EC4899]/06 via-[#8B5CF6]/08 to-transparent blur-[60px] sm:blur-[130px] will-change-transform animate-[blob-float-3_30s_ease-in-out_infinite]"
+        className="absolute bottom-[-50px] sm:bottom-[-100px] left-1/4 sm:left-1/3 w-[280px] sm:w-[450px] h-[280px] sm:h-[450px] rounded-full bg-gradient-to-t from-[#16C7C2]/06 via-[#0D1C1F]/50 to-transparent blur-[60px] sm:blur-[130px] will-change-transform animate-[blob-float-3_30s_ease-in-out_infinite]"
         style={{
           transform: `translate3d(${offset.x * 0.7}px, ${offset.y * 0.7}px, 0)`,
         }}
@@ -83,7 +83,7 @@ export const HeroAtmosphere: React.FC = () => {
 
       {/* Subtle Digital Grid / Lines */}
       <div 
-        className="absolute inset-0 opacity-[0.035] bg-[linear-gradient(to_right,#8B5CF6_1px,transparent_1px),linear-gradient(to_bottom,#8B5CF6_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] will-change-transform"
+        className="absolute inset-0 opacity-[0.035] bg-[linear-gradient(to_right,#16C7C2_1px,transparent_1px),linear-gradient(to_bottom,#16C7C2_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] will-change-transform"
         style={{
           transform: `translate3d(${offset.x * 0.4}px, ${offset.y * 0.4}px, 0)`,
         }}
@@ -109,13 +109,13 @@ export const HeroAtmosphere: React.FC = () => {
 
       {/* Tiny Occasional Light Pulses */}
       <div 
-        className="absolute top-[22%] left-[18%] w-1.5 h-1.5 rounded-full bg-[#38BDF8] opacity-25 animate-[pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite]" 
+        className="absolute top-[22%] left-[18%] w-1.5 h-1.5 rounded-full bg-[#16C7C2] opacity-35 animate-[pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite]" 
       />
       <div 
-        className="absolute top-[65%] right-[22%] w-1.5 h-1.5 rounded-full bg-[#8B5CF6] opacity-30 animate-[pulse_5s_cubic-bezier(0.4,0,0.6,1)_infinite_1.5s]" 
+        className="absolute top-[65%] right-[22%] w-1.5 h-1.5 rounded-full bg-[#62E7E1] opacity-30 animate-[pulse_5s_cubic-bezier(0.4,0,0.6,1)_infinite_1.5s]" 
       />
       <div 
-        className="absolute bottom-[28%] left-[45%] w-1 h-1 rounded-full bg-[#EC4899] opacity-20 animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite_2.5s]" 
+        className="absolute bottom-[28%] left-[45%] w-1 h-1 rounded-full bg-[#16C7C2] opacity-25 animate-[pulse_6s_cubic-bezier(0.4,0,0.6,1)_infinite_2.5s]" 
       />
     </div>
   );
