@@ -332,7 +332,7 @@ export const Projects: React.FC = () => {
             </div>
 
             {/* Modal Footer */}
-            <div className="p-4 sm:p-5 bg-[#0E1428] border-t border-[#1E293B] flex items-center justify-between gap-3">
+            <div className="p-4 sm:p-5 bg-[#0E1428] border-t border-[#1E293B] flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
               <button
                 type="button"
                 onClick={() => {
@@ -343,7 +343,7 @@ export const Projects: React.FC = () => {
                     `Hello, I would like to inquire about building a project similar to "${proj.title}".`
                   );
                 }}
-                className="btn btn-primary !py-2 !px-4 !text-xs cursor-pointer group"
+                className="btn btn-primary !py-2.5 !px-4 !text-xs cursor-pointer group justify-center text-center w-full sm:w-auto"
               >
                 <span>Inquire About Similar Project</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -352,7 +352,7 @@ export const Projects: React.FC = () => {
               <button
                 type="button"
                 onClick={closeModal}
-                className="btn btn-secondary !py-2 !px-4 !text-xs cursor-pointer"
+                className="btn btn-secondary !py-2.5 !px-4 !text-xs cursor-pointer justify-center text-center w-full sm:w-auto"
               >
                 Close
               </button>

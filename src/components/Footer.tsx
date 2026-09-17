@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
                   <span className="badge-sup">2</span>
                 </span>
                 <span className="logo-title">
-                  CLARITY<span className="title-creative">CREATIVE</span>
+                  CLARITY <span className="title-creative">CREATIVE</span>
                 </span>
               </a>
               <p className="text-xs text-[#94A3B8] tracking-widest uppercase">
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Quick Nav Links */}
-            <ul className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center text-xs font-semibold text-[#94A3B8]">
+            <ul className="flex items-center gap-3 sm:gap-6 flex-wrap justify-center text-xs font-semibold text-[#94A3B8]">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <a 
@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
             </ul>
 
             {/* Social Icons & Back to top */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3 flex-wrap">
               <a
                 href={personalInfo.socials.github}
                 target="_blank"

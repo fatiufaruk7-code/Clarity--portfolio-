@@ -66,6 +66,13 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
   const getInitialTransform = () => {
     if (isVisible) return 'translate3d(0, 0, 0)';
+
+    // On mobile devices, avoid horizontal translate to strictly prevent horizontal overflow
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    if (isMobile && (direction === 'left' || direction === 'right')) {
+      return `translate3d(0, ${Math.min(distance, 16)}px, 0)`;
+    }
+
     switch (direction) {
       case 'up':
         return `translate3d(0, ${distance}px, 0)`;
