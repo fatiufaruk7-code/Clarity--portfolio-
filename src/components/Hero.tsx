@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
                   className="block hero-anim-line"
                   style={{ animationDelay: '320ms' }}
                 >
-                  BUILDING MODERN
+                  BUILDING MODERN WEBSITES
                 </span>
               </span>
               <span className="block overflow-hidden pb-1">
@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
                   className="block hero-anim-line bg-gradient-to-r from-[#8B5CF6] via-[#60A5FA] to-[#EC4899] bg-clip-text text-transparent"
                   style={{ animationDelay: '460ms' }}
                 >
-                  WEBSITES THAT GET YOU NOTICED.
+                  THAT GET YOU NOTICED.
                 </span>
               </span>
             </h1>

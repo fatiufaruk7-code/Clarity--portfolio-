@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           <a 
             href="#home" 
             onClick={(e) => handleNavClick(e, 'home')}
-            className="logo logo-hero-anim group" 
+            className="logo logo-hero-anim group flex-shrink-0 mr-4 xl:mr-8" 
             aria-label="Clarity Creative Homepage"
           >
             <span className="logo-badge logo-badge-animated group-hover:scale-105 transition-all duration-300" aria-hidden="true">
@@ -70,7 +70,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               <span className="badge-sup">2</span>
             </span>
             <span className="logo-title">
-              CLARITY<span className="title-creative">CREATIVE</span>
+              CLARITY <span className="title-creative">CREATIVE</span>
             </span>
           </a>
 
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, 'contact')}
-              className="btn btn-primary !py-2.5 !px-5 !text-xs !rounded-full shadow-md shadow-[#8B5CF6]/30"
+              className="btn btn-primary !py-2.5 !px-5 !text-xs !rounded-full shadow-md shadow-[#8B5CF6]/30 whitespace-nowrap"
               id="nav-cta-btn"
             >
               <span>START A PROJECT</span>
@@ -124,7 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
       {/* Mobile Slide-down Drawer */}
       {mobileMenuOpen && (
         <div 
-          className="md:hidden border-b border-[#1E293B] bg-[#0E1428]/98 backdrop-blur-2xl px-5 py-5 sm:px-6 transition-all animate-in slide-in-from-top-4 duration-300 shadow-2xl max-h-[calc(100vh-70px)] overflow-y-auto"
+          className="lg:hidden border-b border-[#1E293B] bg-[#0E1428]/98 backdrop-blur-2xl px-5 py-5 sm:px-6 transition-all animate-in slide-in-from-top-4 duration-300 shadow-2xl max-h-[calc(100vh-70px)] overflow-y-auto"
           id="mobile-drawer"
         >
           <ul className="flex flex-col gap-2 mb-5">
